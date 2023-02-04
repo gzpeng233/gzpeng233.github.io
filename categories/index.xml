@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 学点</title>
+    <link>http://gzpeng233.github.io/categories/</link>
+    <description>Recent content in Categories on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jan 2023 13:55:47 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>电赛</title>
+      <link>http://gzpeng233.github.io/categories/%E7%94%B5%E8%B5%9B/</link>
+      <pubDate>Mon, 30 Jan 2023 13:55:47 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/categories/%E7%94%B5%E8%B5%9B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://gzpeng233.github.io/categories/git/</link>
+      <pubDate>Tue, 24 Jan 2023 15:09:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>微信小程序</title>
+      <link>http://gzpeng233.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Fri, 20 Jan 2023 20:19:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>杂货</title>
+      <link>http://gzpeng233.github.io/categories/%E6%9D%82%E8%B4%A7/</link>
+      <pubDate>Fri, 13 Jan 2023 23:13:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/categories/%E6%9D%82%E8%B4%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matlab</title>
+      <link>http://gzpeng233.github.io/categories/matlab/</link>
+      <pubDate>Wed, 07 Dec 2022 21:36:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/categories/matlab/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

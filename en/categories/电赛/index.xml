@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>电赛 on 学点</title>
+    <link>http://gzpeng233.github.io/en/categories/%E7%94%B5%E8%B5%9B/</link>
+    <description>Recent content in 电赛 on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jan 2023 13:55:47 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/categories/%E7%94%B5%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【电赛】CAN通信协议</title>
+      <link>http://gzpeng233.github.io/en/posts/can/</link>
+      <pubDate>Mon, 30 Jan 2023 13:55:47 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/can/</guid>
+      <description>&lt;p&gt;CAN 协议是众多协议中的一种，目前广泛应用于车联网之中，具有高速、长距离等优点&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【电赛】PID算法</title>
+      <link>http://gzpeng233.github.io/en/posts/pid/</link>
+      <pubDate>Sat, 28 Jan 2023 21:25:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/pid/</guid>
+      <description>&lt;p&gt;PID 算法是单片机项目中常见的算法，常用于无人机、小车、平衡车等项目中&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【电赛】通信协议</title>
+      <link>http://gzpeng233.github.io/en/posts/communication_protocol/</link>
+      <pubDate>Sun, 15 Jan 2023 23:01:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/communication_protocol/</guid>
+      <description>通信 通信的目的： 将一个设备的数据传送到另一个设备， 扩展硬件系统
+通信协议： 制定通信的规则， 通信双方按照协议规则进行数据收发
+有关通信协议
+::: tabs
+@tab 双工
+全双工是指双方可以同时像对方发送数据，同时接收对方发送来的数据 半双工是指双方之间可以互相通信，但不能同时通信，即设备 A 像 B 发送数据，此时设备 B 只能接收数据，不能再向设备 A 发送数据 单工是指只能由一个设备向另一个设备发送数据 @tab 时钟
+同步是指双方的时钟必须同步，即同时产生上升沿，同时产生下降沿 异步对双方的时钟要求不大，但双方的读写频率需相同 @tab 电平
+单端是指常见的 3.3V 与 GND 或 5V 与 GND 差分是指通过两个电压之间的差值来传送数据 @tab 设备
+点对点即是两两通信 多设备则可多台设备互相通信 :::
+串口通信 串口是一种应用十分广泛的通讯接口， 串口成本低、 容易使用、 通信线路简单， 可实现两个设备的互相通信
+单片机的串口可以使单片机与单片机、 单片机与电脑、 单片机与各式各样的模块互相通信， 极大地扩展了单片机的应用范围， 增强了单片机系统的硬件实力</description>
+    </item>
+    
+  </channel>
+</rss>

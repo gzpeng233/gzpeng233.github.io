@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>matlab on 学点</title>
+    <link>http://gzpeng233.github.io/tags/matlab/</link>
+    <description>Recent content in matlab on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Dec 2022 21:36:00 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【matlab】绘图篇</title>
+      <link>http://gzpeng233.github.io/posts/matlab/</link>
+      <pubDate>Wed, 07 Dec 2022 21:36:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/posts/matlab/</guid>
+      <description>&lt;p&gt;本篇文章介绍下matlab的相关绘图知识。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

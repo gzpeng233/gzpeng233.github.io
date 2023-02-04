@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on 学点</title>
+    <link>http://gzpeng233.github.io/en/tags/ssh/</link>
+    <description>Recent content in ssh on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Dec 2022 16:39:00 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【git】ssh</title>
+      <link>http://gzpeng233.github.io/en/posts/ssh_config/</link>
+      <pubDate>Fri, 09 Dec 2022 16:39:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/ssh_config/</guid>
+      <description>&lt;p&gt;ssh, Secure Shell（安全外壳协议），利用ssh访问仓库可避免输入用户名与密码，节省开发时间&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

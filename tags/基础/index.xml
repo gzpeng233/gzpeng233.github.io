@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础 on 学点</title>
+    <link>http://gzpeng233.github.io/tags/%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in 基础 on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Dec 2022 11:04:00 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/tags/%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【git】基础篇</title>
+      <link>http://gzpeng233.github.io/posts/git/</link>
+      <pubDate>Mon, 12 Dec 2022 11:04:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/posts/git/</guid>
+      <description>&lt;p&gt;本篇基于 commit 介绍 git 相关的操作，看之前了解一下与 git 有关的基本概念&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

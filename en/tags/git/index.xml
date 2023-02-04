@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 学点</title>
+    <link>http://gzpeng233.github.io/en/tags/git/</link>
+    <description>Recent content in git on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Jan 2023 15:09:00 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【git】常用代码总结</title>
+      <link>http://gzpeng233.github.io/en/posts/git_common_codes/</link>
+      <pubDate>Tue, 24 Jan 2023 15:09:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/git_common_codes/</guid>
+      <description>&lt;p&gt;git 中代码非常多，总结下常见的代码便于使用&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【git】Commit message 编写指南</title>
+      <link>http://gzpeng233.github.io/en/posts/commit_message_guidelines/</link>
+      <pubDate>Tue, 24 Jan 2023 14:00:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/commit_message_guidelines/</guid>
+      <description>&lt;p&gt;好的git提交信息能够大大提高开发效率，以及节省新版本发布特性文档的编写时间&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【git】基础篇</title>
+      <link>http://gzpeng233.github.io/en/posts/git/</link>
+      <pubDate>Mon, 12 Dec 2022 11:04:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/git/</guid>
+      <description>&lt;p&gt;本篇基于 commit 介绍 git 相关的操作，看之前了解一下与 git 有关的基本概念&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【git】ssh</title>
+      <link>http://gzpeng233.github.io/en/posts/ssh_config/</link>
+      <pubDate>Fri, 09 Dec 2022 16:39:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/ssh_config/</guid>
+      <description>&lt;p&gt;ssh, Secure Shell（安全外壳协议），利用ssh访问仓库可避免输入用户名与密码，节省开发时间&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【git】进阶篇</title>
+      <link>http://gzpeng233.github.io/en/posts/git_ex/</link>
+      <pubDate>Fri, 25 Nov 2022 22:18:18 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/git_ex/</guid>
+      <description>&lt;p&gt;为常用的代码设置别名，可以极大的提高敲代码的速度。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【微信小程序】版本管理</title>
+      <link>http://gzpeng233.github.io/en/posts/first-post/</link>
+      <pubDate>Mon, 31 Oct 2022 15:12:16 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/first-post/</guid>
+      <description>&lt;p&gt;  这是一篇关于微信小程序版本管理文章。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

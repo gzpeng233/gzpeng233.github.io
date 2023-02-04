@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>搜索历史 on 学点</title>
+    <link>http://gzpeng233.github.io/en/tags/%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2/</link>
+    <description>Recent content in 搜索历史 on 学点</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jan 2023 20:19:00 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/tags/%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【微信小程序】搜索历史页面</title>
+      <link>http://gzpeng233.github.io/en/posts/search_history_page/</link>
+      <pubDate>Fri, 20 Jan 2023 20:19:00 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/search_history_page/</guid>
+      <description>&lt;p&gt;对于搜索历史页面的编写，关键在于本地缓存的使用&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
