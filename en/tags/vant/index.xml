@@ -21,8 +21,8 @@
 什么是 Vant Weapp Vant Weapp 是有赞前端团队开源的一套小程序 UI 组件库，助力开发者快速搭建小程序应用。它所使用的是 MIT 开源许可协议，对商业使用比较友好。
 官方文档地址：介绍 - Vant Weapp (youzan.github.io)
 安装 Vant 组件库 在小程序项目中，安装 Vant 组件库主要分为如下几步
-初始化 npm 在空白处右击，选择内建终端，使用以下代码进行初始化 npm
-1 npm init -y 安装 vant 在 miniprogram 文件夹处右击，选择内建终端，使用以下代码进行安装 vant</description>
+安装 vant 在 miniprogram 文件夹处右击，选择内建终端，使用以下代码进行安装 vant
+1 npm i @vant/weapp@1.3.3 -S --production // 其中1.</description>
     </item>
     
   </channel>
