@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://gzpeng233.github.io/posts/can/</loc>
-    <lastmod>2023-01-30T14:41:33+08:00</lastmod>
+    <loc>http://gzpeng233.github.io/posts/wxminiprogram_common_problem/</loc>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://gzpeng233.github.io/en/posts/can/"
+                href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://gzpeng233.github.io/posts/can/"
+                href="http://gzpeng233.github.io/posts/wxminiprogram_common_problem/"
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/categories/</loc>
-    <lastmod>2023-02-04T16:31:26+08:00</lastmod>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/posts/</loc>
-    <lastmod>2023-02-04T16:31:26+08:00</lastmod>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/tags/</loc>
-    <lastmod>2023-02-04T16:31:26+08:00</lastmod>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -52,6 +52,58 @@
                 rel="alternate"
                 hreflang="zh"
                 href="http://gzpeng233.github.io/tags/"
+                />
+  </url><url>
+    <loc>http://gzpeng233.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://gzpeng233.github.io/en/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://gzpeng233.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
+                />
+  </url><url>
+    <loc>http://gzpeng233.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://gzpeng233.github.io/en/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://gzpeng233.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
+                />
+  </url><url>
+    <loc>http://gzpeng233.github.io/</loc>
+    <lastmod>2023-02-04T16:46:34+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://gzpeng233.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://gzpeng233.github.io/"
+                />
+  </url><url>
+    <loc>http://gzpeng233.github.io/posts/can/</loc>
+    <lastmod>2023-01-30T14:41:33+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://gzpeng233.github.io/en/posts/can/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://gzpeng233.github.io/posts/can/"
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/tags/%E7%94%B5%E8%B5%9B/</loc>
@@ -78,19 +130,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="http://gzpeng233.github.io/categories/%E7%94%B5%E8%B5%9B/"
-                />
-  </url><url>
-    <loc>http://gzpeng233.github.io/</loc>
-    <lastmod>2023-02-04T16:31:26+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://gzpeng233.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://gzpeng233.github.io/"
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/posts/pid/</loc>
@@ -195,32 +234,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="http://gzpeng233.github.io/tags/%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2/"
-                />
-  </url><url>
-    <loc>http://gzpeng233.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2023-01-31T21:31:30+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://gzpeng233.github.io/en/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://gzpeng233.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
-                />
-  </url><url>
-    <loc>http://gzpeng233.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2023-01-31T21:31:30+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://gzpeng233.github.io/en/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://gzpeng233.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/posts/communication_protocol/</loc>

@@ -3,21 +3,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>学点 | 【杂货】一些杂货</title>
-    <meta name="description" content="一些杂货 ">
-    <link rel="canonical" href="http://gzpeng233.github.io/en/posts/collection/" />
+    <title>学点 | 【微信小程序】常见问题</title>
+    <meta name="description" content="这里是各种常见问题 ">
+    <link rel="canonical" href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <meta property="og:title" content="【杂货】一些杂货" />
-<meta property="og:description" content="一些杂货" />
+    <meta property="og:title" content="【微信小程序】常见问题" />
+<meta property="og:description" content="这里是各种常见问题" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://gzpeng233.github.io/en/posts/collection/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-12-15T10:53:00+08:00" />
-<meta property="article:modified_time" content="2023-01-08T23:00:00+08:00" />
+<meta property="og:url" content="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-04T16:46:34+08:00" />
+<meta property="article:modified_time" content="2023-02-04T16:46:34+08:00" />
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="【杂货】一些杂货"/>
-<meta name="twitter:description" content="一些杂货"/>
+<meta name="twitter:title" content="【微信小程序】常见问题"/>
+<meta name="twitter:description" content="这里是各种常见问题"/>
 
     
         
@@ -222,28 +222,28 @@
     <div class="hero">
         
             <div class="hero-img">
-                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/collection/collection.jpg" alt="">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/wxminiprogram_common_problem/wxminiprogram_common_problem.jpg" alt="">
             </div>
         
         <div class="hero-content">
-            <div class="hero-title">【杂货】一些杂货</div>
+            <div class="hero-title">【微信小程序】常见问题</div>
             <div class="hero-subtitle"></div>
             <div class="hero-date">
-                    <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2022-12-15 &nbsp;</span>
-                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-1-8 &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2023-2-4 &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-2-4 &nbsp;</span>
                     <span class="no-wrap"><i class="fa fa-folder"></i>
                         includedIn:
                         
                             <a href='
-                                /en/categories/%E6%9D%82%E8%B4%A7
+                                /en/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F
                             '>
-                                杂货
+                                微信小程序
                             </a>
                     </span>    
             </div>
             <div class="timelong">
-                <span class="no-wrap"><i class="fa fa-pencil"></i> wordsCount: 25 &nbsp;</span>
-                <span class="no-wrap"><i class="fa fa-clock-o"></i> readingTime: 1 min &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-pencil"></i> wordsCount: 303 &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-clock-o"></i> readingTime: 2 mins &nbsp;</span>
                 <span class="no-wrap"><i class="fa fa-eye"></i> viewers: <span id="busuanzi_value_page_pv"></span></span>
             </div>
         </div>
@@ -279,39 +279,260 @@
     
         <div class="content">
             <div class="content-self">
-                <p>下面是一些杂货，可能会用得到，不定时更新</p>
-<h1 id="必">“必”</h1>
+                <p>微信小程序开发过程中有许多常见问题，虽难度较小，但解决方式不易找出，故列举如下</p>
+<h1 id="将文件下载至手机">将文件下载至手机</h1>
+<h2 id="云存储">云存储</h2>
+<p>云存储可以将文件保存在云端，核心是 云存储ID，但下载时只能由云存储ID换为临时路径，并不能保存至手机</p>
+<p>官方网址：<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/storage/api.html#API-%E6%8C%87%E5%BC%95">云存储| 微信开放文档 (qq.com)</a></p>
+<p>相关函数如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* 上传文件 */</span>
+</span></span><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">uploadFile</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">cloudPath</span><span class="o">:</span> <span class="s1">&#39;example.png&#39;</span><span class="p">,</span> <span class="c1">// 上传至云端的路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">filePath</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">// 小程序临时文件路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">success</span><span class="o">:</span> <span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 返回文件 ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">fileID</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fail</span><span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 下载文件 */</span>
+</span></span><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">downloadFile</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fileID</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">// 文件 ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">success</span><span class="o">:</span> <span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 返回临时文件路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">tempFilePath</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fail</span><span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 删除文件 */</span>
+</span></span><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">deleteFile</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fileList</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;a7xzcb&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">success</span><span class="o">:</span> <span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// handle success
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">fileList</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fail</span><span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 换取临时链接 */</span>
+</span></span><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">cloud</span><span class="p">.</span><span class="nx">getTempFileURL</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fileList</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cloud://xxx.png&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">success</span><span class="o">:</span> <span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// fileList 是一个有如下结构的对象数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// [{
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//    fileID: &#39;cloud://xxx.png&#39;, // 文件 ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//    tempFileURL: &#39;&#39;, // 临时文件网络链接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//    maxAge: 120 * 60 * 1000, // 有效期
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// }]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">fileList</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fail</span><span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="保存文件">保存文件</h2>
 <ol>
-<li>必看网址</li>
+<li>保存文件</li>
 </ol>
-<p><a href="https://csdiy.wiki/">CS自学指南</a></p>
-<ol start="2">
-<li>必备技能</li>
+<p>API 具体信息：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.openDocument.html">wx.openDocument(Object object)</a></p>
+<blockquote>
+<p>tip
+可保存的类型有：doc、docx、xls、xlsx、ppt、pptx、pdf</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">openDocument</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">filePath</span><span class="o">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">tempFilePath</span><span class="p">,</span>	<span class="c1">// 临时路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">showMenu</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">wx</span><span class="p">.</span><span class="nx">showToast</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;请在预览页面手动保存&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>保存视频</li>
 </ol>
-<p><a href="https://www.bilibili.com/video/BV1YQ4y1M73G/" title="论文排版教程">Word论文排版教程</a></p>
-<ol start="3">
-<li>必备工具</li>
+<p>API 具体信息：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.saveVideoToPhotosAlbum.html">wx.saveVideoToPhotosAlbum(Object object)</a></p>
+<blockquote>
+<p>tip
+可保存的类型有：mp4</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">saveVideoToPhotosAlbum</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">filePath</span><span class="o">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">tempFilePath</span><span class="p">,</span>	<span class="c1">// 临时路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">wx</span><span class="p">.</span><span class="nx">showToast</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;保存成功&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>保存图片</li>
 </ol>
-<p><a href="https://www.latex-project.org/">LaTeX——论文排版 </a></p>
-<p><a href="https://www.typoraio.cn/">Typora——markdown书写</a></p>
-<p><a href="https://gohugo.io/">Hugo——快速创建网站</a></p>
-<p><a href="https://git-scm.com/">Git——分布式版本控制系统</a></p>
-<p><a href="https://xmind.cn/">Xmind思维导图</a></p>
-<p><a href="https://docs.snipaste.com/zh-cn/">Snipaste——非常好用的截图软件</a></p>
-<ol start="4">
-<li>必备网站</li>
+<p>图片保存较为简单，手机端长按即可保存</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">previewImage</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">urls</span><span class="o">:</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">shareDetail</span><span class="p">.</span><span class="nx">content</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">url</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">current</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">shareDetail</span><span class="p">.</span><span class="nx">content</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">showmenu</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="页面滚动">页面滚动</h1>
+<ol>
+<li>page 页面</li>
 </ol>
-<p><a href="https://github.com/">GitHub——最大代码共享平台</a></p>
-<p><a href="https://www.latexlive.com/##">在线LaTeX公式编辑器-编辑器</a></p>
-<p><a href="http://www.lizibuluo.com/mind/">思维导图在线生成器</a></p>
-<p><a href="https://www.iconfont.cn/search/index">阿里巴巴矢量图标库</a></p>
-<p><a href="https://www.linshi-email.com/">临时邮箱——10分钟邮箱</a></p>
-<p><a href="https://www.meiguodizhi.com/">地址生成器</a></p>
-<h1 id="论文查重">论文查重</h1>
-<p>微信小程序：paperyy</p>
-<h1 id="推荐网课">推荐网课</h1>
-<p><a href="https://www.bilibili.com/video/BV18x411Q7hf" title="大学物理（电磁学）知识梳理与例题选讲">大学物理</a></p>
-<p><a href="https://www.bilibili.com/video/BV1kZ4y1w7dy" title="数字电路">数字电路</a></p>
+<p>网址：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/wx.pageScrollTo.html">wx.pageScrollTo(Object object) </a></p>
+<p>示例代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/* 滚动至页面顶端 */</span>
+</span></span><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">pageScrollTo</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">scrollTop</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">duration</span><span class="o">:</span> <span class="mi">300</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>scroll-view 页面</li>
+</ol>
+<p>增强 ScrollView 实例：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ScrollViewContext.html">ScrollViewContext</a></p>
+<p>滚动至指定位置：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ScrollViewContext.scrollTo.html">ScrollViewContext.scrollTo(Object object)</a></p>
+<p>示例代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">scroll-view</span> <span class="na">enhanced</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;shareScrollview&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">scroll-view</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/* 滚动至顶端 */</span>
+</span></span><span class="line"><span class="cl"><span class="nx">wx</span><span class="p">.</span><span class="nx">createSelectorQuery</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;#shareScrollview&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">node</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">exec</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">scrollView</span> <span class="o">=</span> <span class="nx">res</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">node</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">scrollView</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">top</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
             </div>
             
                 <div class="tags">
@@ -319,9 +540,9 @@
                     <span class="down-type-item">
                         <div class="type-text">
                             <a href='
-                                        /en/tags/%E6%9D%82%E8%B4%A7
+                                        /en/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F
                                     '>
-                                <i class="fa fa-tag"></i> 杂货
+                                <i class="fa fa-tag"></i> 微信小程序
                             </a>
                         </div>
                     </span>
@@ -335,23 +556,13 @@
                     
     
         
-        <a href="http://gzpeng233.github.io/en/posts/git/" class="pre">
+        <a href="http://gzpeng233.github.io/en/posts/can/" class="pre pre-last" style="text-align: center;">
             <span class="pre-icon"><i class="fa fa-hand-o-left"></i></span>
             <div class="pre-title-root">
-                <span>【git】基础篇</span>
+                <span>【电赛】CAN通信协议</span>
             </div>
         </a>
         
-
-        
-        <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_help/" class="next">
-            <div class="next-title-root">
-                <span>【微信小程序】帮助文档</span>
-            </div>
-            <span class="next-icon"><i class="fa fa-hand-o-right"></i></span>
-        </a>
-        
-
     
     
 
@@ -463,101 +674,116 @@
     </div>
     <div class="list">
         
-            <a href="http://gzpeng233.github.io/en/posts/science_surf_github/">
+            <a href="http://gzpeng233.github.io/en/posts/search_history_page/">
                 
-<a href="http://gzpeng233.github.io/en/posts/science_surf_github/">
+<a href="http://gzpeng233.github.io/en/posts/search_history_page/">
     <div class="list-item">
         <div class="icon-other-root">
             
-                <div class="icon-other" style="background-image: url( /images/posts/science_surf_github/science_surf_github.jpg );"></div>
+                <div class="icon-other" style="background-image: url( /images/posts/search_history_page/search_history_page.jpg );"></div>
             
         </div>
         <div class="list-right">
             <div class="other-title">
-                【杂货】如何科学连接GitHub
+                【微信小程序】搜索历史页面
             </div>
-            <div class="other-summary"><p>开发最常见的问题就是Github连接较慢，如何才能连接Github不掉网，这里记录我使用的几种方式</p></div>
-            <div class="other-date">2023-1-13</div>
+            <div class="other-summary"><p>对于搜索历史页面的编写，关键在于本地缓存的使用</p></div>
+            <div class="other-date">2023-1-20</div>
         </div>
     </div>
 </a>
             </a>
         
-            <a href="http://gzpeng233.github.io/en/posts/trouble_solve/">
+            <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_help/">
                 
-<a href="http://gzpeng233.github.io/en/posts/trouble_solve/">
+<a href="http://gzpeng233.github.io/en/posts/wxminiprogram_help/">
     <div class="list-item">
         <div class="icon-other-root">
             
-                <div class="icon-other" style="background-image: url( /images/posts/trouble_solve/trouble_solve.jpg );"></div>
+                <div class="icon-other" style="background-image: url( /images/posts/wxminiprogram_help/wxminiprogram_help.jpg );"></div>
             
         </div>
         <div class="list-right">
             <div class="other-title">
-                【杂货】一些开发常见问题
+                【微信小程序】帮助文档
             </div>
-            <div class="other-summary"><p>记录一些开发常见的问题</p></div>
-            <div class="other-date">2023-1-10</div>
+            <div class="other-summary">将常用的微信小程序开发过程中使用的网址放在这里，方便使用。
+vant weapp 官网 网址：Vant Weapp
+tip vant weapp 目前还在持续更新，随时来官网看看，能有不同的收获
+git 代码管理 使用 git 管理代码要用到远程仓库目前有两个热门
+一：Gitee.com
+二：GitHub
+tip 区别是 gitee 是国内服务器，网速较快，github 是国外服务器，需要科学上网
+jsDoc注释 参考网址：jsDoc注释规范
+快速掌握：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 /** * 相关介绍 * @author 该类/方法的作者 * @class 表示这是一个类 * @function/@method 表示这是一个函数/方法(这是同义词) * @private 表示该类/方法是私有的，JSDOC 不会为其生成文档 * @name 该类/方法的名字 * @description 该类/方法的描述 * @param 该类/方法的参数，可重复定义 * @return 该类/方法的返回类型 * @version 当前代码的版本 * @copyright 代码的版权信息 * @overview 对当前代码文件的描述 * @link 创建超链接，生成文档时可以为其链接到其他部分 * @example * wx.</div>
+            <div class="other-date">2023-1-8</div>
         </div>
     </div>
 </a>
             </a>
         
-            <a href="http://gzpeng233.github.io/en/posts/git/">
+            <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_npm_i/">
                 
-<a href="http://gzpeng233.github.io/en/posts/git/">
+<a href="http://gzpeng233.github.io/en/posts/wxminiprogram_npm_i/">
     <div class="list-item">
         <div class="icon-other-root">
             
-                <div class="icon-other" style="background-image: url( /images/posts/git/git.jpg );"></div>
+                <div class="icon-other" style="background-image: url( /images/posts/wechatminiprogram.jpg );"></div>
             
         </div>
         <div class="list-right">
             <div class="other-title">
-                【git】基础篇
+                【微信小程序】vant-weapp使用
             </div>
-            <div class="other-summary"><p>本篇基于 commit 介绍 git 相关的操作，看之前了解一下与 git 有关的基本概念</p></div>
-            <div class="other-date">2022-12-12</div>
+            <div class="other-summary">小程序对 npm的支持与限制 目前，小程序中已经支持使用 npm 安装第三方包，从而来提高小程序的开发效率。但是，在小程序中使用npm 包有如下3个限制:
+不支持依赖于 Node.js 内置库的包 不支持依赖于浏览器内置对象的包 不支持依赖于 C++ 插件的包 总结:虽然npm 上的包有千千万，但是能供小程序使用的包却“为数不多
+什么是 Vant Weapp Vant Weapp 是有赞前端团队开源的一套小程序 UI组件库，助力开发者快速搭建小程序应用。它所使用的是MIT 开源许可协议，对商业使用比较友好。 官方文档地址 https://youzan.github.io/vant-weapp
+安装Vant 组件库 在小程序项目中，安装Vant 组件库主要分为如下3步
+通过 npm 安装(建议指定版本为@1.3.3) 构建npm包 修改appjson 初始化npm npm init -y (primary)
+安装vantnpm npm i @vant/weapp@1.3.3 -S --production (primary) 其中1.3.3为版本号
+修改app.json 将 app.json 中的 &quot;style&quot;: &quot;v2&quot; (primary) 去除</div>
+            <div class="other-date">2022-11-22</div>
         </div>
     </div>
 </a>
             </a>
         
-            <a href="http://gzpeng233.github.io/en/posts/ssh_config/">
+            <a href="http://gzpeng233.github.io/en/posts/first-post/">
                 
-<a href="http://gzpeng233.github.io/en/posts/ssh_config/">
+<a href="http://gzpeng233.github.io/en/posts/first-post/">
     <div class="list-item">
         <div class="icon-other-root">
             
-                <div class="icon-other" style="background-image: url( /images/posts/ssh_config/ssh_config.jpg );"></div>
+                <div class="icon-other" style="background-image: url( /images/posts/wechatminiprogram.jpg );"></div>
             
         </div>
         <div class="list-right">
             <div class="other-title">
-                【git】ssh
+                【微信小程序】版本管理
             </div>
-            <div class="other-summary"><p>ssh, Secure Shell（安全外壳协议），利用ssh访问仓库可避免输入用户名与密码，节省开发时间</p></div>
-            <div class="other-date">2022-12-9</div>
+            <div class="other-summary"><p>  这是一篇关于微信小程序版本管理文章。</p></div>
+            <div class="other-date">2022-10-31</div>
         </div>
     </div>
 </a>
             </a>
         
-            <a href="http://gzpeng233.github.io/en/posts/matlab/">
+            <a href="http://gzpeng233.github.io/en/posts/can/">
                 
-<a href="http://gzpeng233.github.io/en/posts/matlab/">
+<a href="http://gzpeng233.github.io/en/posts/can/">
     <div class="list-item">
         <div class="icon-other-root">
             
-                <div class="icon-other" style="background-image: url( /images/posts/matlab/matlab.jpg );"></div>
+                <div class="icon-other" style="background-image: url( /images/posts/CAN/CAN.jpg );"></div>
             
         </div>
         <div class="list-right">
             <div class="other-title">
-                【matlab】绘图篇
+                【电赛】CAN通信协议
             </div>
-            <div class="other-summary"><p>本篇文章介绍下matlab的相关绘图知识。</p></div>
-            <div class="other-date">2022-12-7</div>
+            <div class="other-summary"><p>CAN 协议是众多协议中的一种，目前广泛应用于车联网之中，具有高速、长距离等优点</p></div>
+            <div class="other-date">2023-1-30</div>
         </div>
     </div>
 </a>
