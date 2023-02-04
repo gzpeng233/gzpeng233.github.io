@@ -335,10 +335,10 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote				// 查看当前远程仓库
-</span></span><span class="line"><span class="cl">git remote -v				// 查看当前远程仓库具体信息
-</span></span><span class="line"><span class="cl">git remote add &lt;别名&gt; &lt;远程仓库链接&gt;	// 添加远程仓库
-</span></span><span class="line"><span class="cl">git remote rm &lt;别名&gt;			// 删除远程仓库
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote					// 查看当前远程仓库
+</span></span><span class="line"><span class="cl">git remote -v					// 查看当前远程仓库具体信息
+</span></span><span class="line"><span class="cl">git remote add &lt;别名&gt; &lt;远程仓库链接&gt;		// 添加远程仓库
+</span></span><span class="line"><span class="cl">git remote rm &lt;别名&gt;				// 删除远程仓库
 </span></span><span class="line"><span class="cl">git remote set-url &lt;别名&gt;  &lt;远程仓库链接&gt;	// 修改远远程仓库链接
 </span></span></code></pre></td></tr></table>
 </div>
@@ -359,9 +359,9 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push &lt;别名&gt; &lt;分支&gt;				// 将&lt;分支&gt;上代码上传至&lt;别名&gt;中对应分支上
 </span></span><span class="line"><span class="cl">git push -u &lt;别名&gt; &lt;分支&gt;			// 将&lt;分支&gt;上代码上传至&lt;别名&gt;中对应分支上，并设为 push 默认项
 </span></span><span class="line"><span class="cl">git push &lt;别名&gt; &lt;本地分支&gt;:&lt;远程仓库分支&gt;	// 将&lt;本地分支&gt;上代码上传&lt;远程仓库分支&gt;上
-</span></span><span class="line"><span class="cl">git push &lt;别名&gt; :&lt;远程仓库分支&gt;		// 删除&lt;别名&gt;&lt;远程仓库分支&gt;
-</span></span><span class="line"><span class="cl">git push &lt;别名&gt; --delete master		// 删除&lt;别名&gt;&lt;远程仓库分支&gt;
-</span></span><span class="line"><span class="cl">git push &lt;别名&gt;			// 将当前分支（已与远程关联）推送到&lt;别名&gt;上对应的分支
+</span></span><span class="line"><span class="cl">git push &lt;别名&gt; :&lt;远程仓库分支&gt;			// 删除&lt;别名&gt;&lt;远程仓库分支&gt;
+</span></span><span class="line"><span class="cl">git push &lt;别名&gt; --delete master			// 删除&lt;别名&gt;&lt;远程仓库分支&gt;
+</span></span><span class="line"><span class="cl">git push &lt;别名&gt;					// 将当前分支（已与远程关联）推送到&lt;别名&gt;上对应的分支
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">git fetch &lt;别名&gt; &lt;分支&gt;				// 抓取&lt;别名&gt;上的&lt;分支&gt;代码到本地仓库
 </span></span><span class="line"><span class="cl">git fetch &lt;别名&gt; &lt;远程仓库分支&gt;:&lt;本地分支&gt;	// 抓取&lt;别名&gt;上的&lt;远程仓库分支&gt;代码到本地仓库并链接到&lt;本地分支&gt;上
