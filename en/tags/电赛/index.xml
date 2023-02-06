@@ -6,7 +6,16 @@
     <description>Recent content in 电赛 on 学点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jan 2023 13:55:47 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/tags/%E7%94%B5%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Feb 2023 17:20:16 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/tags/%E7%94%B5%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【电赛】电赛编程指南</title>
+      <link>http://gzpeng233.github.io/en/posts/nuedc_code/</link>
+      <pubDate>Mon, 06 Feb 2023 17:20:16 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/posts/nuedc_code/</guid>
+      <description>&lt;p&gt;单片机控制需要许多模块之间的配合&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>【电赛】CAN通信协议</title>
       <link>http://gzpeng233.github.io/en/posts/can/</link>
