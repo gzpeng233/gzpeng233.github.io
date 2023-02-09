@@ -3,19 +3,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>学点 | 杂货</title>
-    <meta name="description" content=" ">
-    <link rel="canonical" href="http://gzpeng233.github.io/en/tags/%E6%9D%82%E8%B4%A7/" />
+    <title>学点 | 【电赛】openmv 编程指南</title>
+    <meta name="description" content="openmv 编程指南 ">
+    <link rel="canonical" href="http://gzpeng233.github.io/en/posts/openmv_code/" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <meta property="og:title" content="杂货" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://gzpeng233.github.io/en/tags/%E6%9D%82%E8%B4%A7/" />
+    <meta property="og:title" content="【电赛】openmv 编程指南" />
+<meta property="og:description" content="openmv 编程指南" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gzpeng233.github.io/en/posts/openmv_code/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-09T11:28:40+08:00" />
+<meta property="article:modified_time" content="2023-02-09T16:58:28+08:00" />
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="杂货"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="【电赛】openmv 编程指南"/>
+<meta name="twitter:description" content="openmv 编程指南"/>
 
     
         
@@ -209,29 +211,41 @@
 
 
         <div id="content">
-    
 
 
 
 
-
-
-    
-        
-    
 
 
 
 
     <div class="hero">
         
-            
-                <div class="hero-img">
-                    <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/science_surf_github/science_surf_github.jpg" alt="">
-                </div>
-            
+            <div class="hero-img">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/openmv_code/openmv_code.jpg" alt="">
+            </div>
+        
         <div class="hero-content">
-            <h1 class="hero-title">Tag: 杂货</h1>
+            <div class="hero-title">【电赛】openmv 编程指南</div>
+            <div class="hero-subtitle"></div>
+            <div class="hero-date">
+                    <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2023-2-9 &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-2-9 &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-folder"></i>
+                        includedIn:
+                        
+                            <a href='
+                                /en/categories/%E7%94%B5%E8%B5%9B
+                            '>
+                                电赛
+                            </a>
+                    </span>    
+            </div>
+            <div class="timelong">
+                <span class="no-wrap"><i class="fa fa-pencil"></i> wordsCount: 670 &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-clock-o"></i> readingTime: 4 mins &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-eye"></i> viewers: <span id="busuanzi_value_page_pv"></span></span>
+            </div>
         </div>
     </div>
 
@@ -250,7 +264,7 @@
     
 
 
-<div class="terms-body">
+<div class="content-root">
     <div class="long">
         <button class="tosides-1 text-wbd">
             <i class="fa fa-arrow-right"></i>
@@ -263,213 +277,405 @@
         </button>
     </div>
     
-        <div class="terms-row">
+        <div class="content">
+            <div class="content-self">
+                <p>openmv开发指南</p>
+<h1 id="概括">概括</h1>
+<p>openmv 拥有许多模块，每个模块包含不同的类，每个类拥有许多函数以实现具体功能</p>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="n">模块</span><span class="p">:</span> <span class="n">pyb</span>
+</span></span><span class="line"><span class="cl">	<span class="n">包含类</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">UART</span><span class="p">:</span> <span class="n">包含函数</span>
+</span></span><span class="line"><span class="cl">    	<span class="n">UART</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UART</span><span class="o">.</span><span class="n">deinit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UART</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UART</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UART</span><span class="o">.</span><span class="n">readchar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UART</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UART</span><span class="o">.</span><span class="n">writechar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ADC</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="o">......</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CAN</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="o">......</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LED</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="o">......</span>
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="sensor---感光元件">sensor - 感光元件</h1>
+<p>sensor 模块用于拍摄照片。</p>
+<p>用法示例:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sensor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Setup camera. 设置相机</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor</span><span class="o">.</span><span class="n">set_pixformat</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">RGB565</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor</span><span class="o">.</span><span class="n">set_framesize</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">QVGA</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sensor</span><span class="o">.</span><span class="n">skip_frames</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Take pictures. 拍照。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sensor</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="函数">函数</h2>
+<ol>
+<li>sensor.reset()</li>
+</ol>
+<p>初始化相机传感器。</p>
+<ol start="2">
+<li>sensor.set_pixformat(<em>pixformat</em>)</li>
+</ol>
+<p>设置相机模块的像素模式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="n">pixformat</span> <span class="n">可选值</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">GRAYSCALE</span><span class="p">:</span> <span class="mi">8</span> <span class="n">bits</span><span class="o">/</span><span class="n">像素</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">RGB565</span><span class="p">:</span> <span class="mi">16</span> <span class="n">bits</span><span class="o">/</span><span class="n">像素</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">BAYER</span><span class="p">:</span> <span class="mi">8</span> <span class="n">bits每像素的bayer格式</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">JPEG</span><span class="p">:</span> <span class="n">JPEG压缩数据</span><span class="err">。</span><span class="n">仅适用于OV2640</span><span class="o">/</span><span class="n">OV5640</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果您试图使用OV2640或OV5640相机模块的较高分辨率拍摄JPEG图像， 你应该将像素格式设置为 <code>sensor.JPEG (tip)</code> 。 然后你可以使用控制图像质量 <code>sensor.set_quality() (tip)</code></p>
+<ol start="3">
+<li>sensor.set_framesize(<em>framesize</em>)</li>
+</ol>
+<p>设置相机模块的帧大小。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="n">framesize</span> <span class="n">可选值</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QQCIF</span><span class="p">:</span> <span class="mi">88</span><span class="n">x72</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QCIF</span><span class="p">:</span> <span class="mi">176</span><span class="n">x144</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">CIF</span><span class="p">:</span> <span class="mi">352</span><span class="n">x288</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QQSIF</span><span class="p">:</span> <span class="mi">88</span><span class="n">x60</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QSIF</span><span class="p">:</span> <span class="mi">176</span><span class="n">x120</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">SIF</span><span class="p">:</span> <span class="mi">352</span><span class="n">x240</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QQQQVGA</span><span class="p">:</span> <span class="mi">40</span><span class="n">x30</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QQQVGA</span><span class="p">:</span> <span class="mi">80</span><span class="n">x60</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QQVGA</span><span class="p">:</span> <span class="mi">160</span><span class="n">x120</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QVGA</span><span class="p">:</span> <span class="mi">320</span><span class="n">x240</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">VGA</span><span class="p">:</span> <span class="mi">640</span><span class="n">x480</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">HQQQVGA</span><span class="p">:</span> <span class="mi">60</span><span class="n">x40</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">HQQVGA</span><span class="p">:</span> <span class="mi">120</span><span class="n">x80</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">HQVGA</span><span class="p">:</span> <span class="mi">240</span><span class="n">x160</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">B64X32</span><span class="p">:</span> <span class="mi">64</span><span class="n">x32</span> <span class="p">(</span><span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">image</span><span class="o">.</span><span class="n">find_displacement</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">B64X64</span><span class="p">:</span> <span class="mi">64</span><span class="n">x64</span> <span class="p">(</span><span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">image</span><span class="o">.</span><span class="n">find_displacement</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">B128X64</span><span class="p">:</span> <span class="mi">128</span><span class="n">x64</span> <span class="p">(</span><span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">image</span><span class="o">.</span><span class="n">find_displacement</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">B128X128</span><span class="p">:</span> <span class="mi">128</span><span class="n">x128</span> <span class="p">(</span><span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">image</span><span class="o">.</span><span class="n">find_displacement</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">MT9M114</span><span class="p">:</span> <span class="n">New</span> <span class="n">Rolling</span> <span class="n">shutter</span> <span class="n">sensor</span> <span class="n">module</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">LCD</span><span class="p">:</span> <span class="mi">128</span><span class="n">x160</span> <span class="p">(</span><span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">the</span> <span class="n">lcd</span> <span class="n">shield</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QQVGA2</span><span class="p">:</span> <span class="mi">128</span><span class="n">x160</span> <span class="p">(</span><span class="k">for</span> <span class="n">use</span> <span class="k">with</span> <span class="n">the</span> <span class="n">lcd</span> <span class="n">shield</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">WVGA</span><span class="p">:</span> <span class="mi">720</span><span class="n">x480</span> <span class="p">(</span><span class="k">for</span> <span class="n">the</span> <span class="n">MT9V034</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">WVGA2</span><span class="p">:</span><span class="mi">752</span><span class="n">x480</span> <span class="p">(</span><span class="k">for</span> <span class="n">the</span> <span class="n">MT9V034</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">SVGA</span><span class="p">:</span> <span class="mi">800</span><span class="n">x600</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV2640</span><span class="o">/</span><span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">XGA</span><span class="p">:</span> <span class="mi">1024</span><span class="n">x768</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV2640</span><span class="o">/</span><span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">SXGA</span><span class="p">:</span> <span class="mi">1280</span><span class="n">x1024</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV2640</span><span class="o">/</span><span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">UXGA</span><span class="p">:</span> <span class="mi">1600</span><span class="n">x1200</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV2640</span><span class="o">/</span><span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">HD</span><span class="p">:</span> <span class="mi">1280</span><span class="n">x720</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV2640</span><span class="o">/</span><span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">FHD</span><span class="p">:</span> <span class="mi">1920</span><span class="n">x1080</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QHD</span><span class="p">:</span> <span class="mi">2560</span><span class="n">x1440</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">QXGA</span><span class="p">:</span> <span class="mi">2048</span><span class="n">x1536</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">WQXGA</span><span class="p">:</span> <span class="mi">2560</span><span class="n">x1600</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">-</span> <span class="n">sensor</span><span class="o">.</span><span class="n">WQXGA2</span><span class="p">:</span> <span class="mi">2592</span><span class="n">x1944</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OV5640</span> <span class="n">sensor</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>sensor.skip_frames([<em>n</em>, <em>time</em>])</li>
+</ol>
+<p>使用 n 个快照，让相机图像在改变相机设置后稳定下来。 n 作为普通参数传输， 例如： skip_frames(10) 跳过 10 帧。您应在改变相机设置后调用该函数。</p>
+<p>或者，您可通过关键字参数 time 来跳过几毫秒的帧数，例如： kip_frames(time = 2000) ，跳过2000毫秒的帧。</p>
+<p>若 n 和 time 皆未指定，该方法跳过300毫秒的帧。</p>
+<p>若二者皆指定，该方法会跳过 n 数量的帧，但将在 time 毫秒后超时。</p>
+<blockquote>
+<p>tip
+<code>sensor.snapshot()</code>可以应用裁剪参数来适应可用RAM中的快照，包括像素格式、帧大小、窗口和帧缓冲区。 裁剪参数将被应用以保持纵横比，并将一致保持到调用 <code>sensor.set_framesize()</code> 或 <code>sensor.set_windowing()</code> 。</p>
+</blockquote>
+<ol start="5">
+<li>sensor.snapshot()</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/** 拍摄一张照片
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @pram None
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @revert Image() 返回 Image 类
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">sensor</span><span class="p">.</span><span class="n">snapshot</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用相机拍摄一张照片，并返回 image 对象。 OpenMV有两个图像存储区。用于正常MicroPython处理的经典堆栈/堆区可以将小图像存储在堆中。 但是，MicroPython堆只有大约100KB，这不足以存储更大的图像。因此，您的OpenMV Cam有一个辅助帧缓冲存储区， 用于存储 sensor.snapshot() 所拍摄的图像。 图像存储在该存储区域的底部。 剩下的任何内存都可供帧缓冲区堆栈使用，OpenMV Cam的固件使用它来保存用于图像处理算法的大型临时数据结构。</p>
+<p>如果你需要空间来容纳多个帧，你可以通过调用 <code>sensor.alloc_extra_fb() (tip)</code> 来“偷走”帧缓冲区空间。</p>
+<p>如果 <code>sensor.set_auto_rotation() (tip)</code> 被启用，这个方法将返回一个新的已经旋转过的 image 对象。</p>
+<blockquote>
+<p>tip
+<code>sensor.snapshot()</code> 可以应用裁剪参数来适应可用RAM中的快照，包括像素格式、帧大小、窗口和帧缓冲区。 裁剪参数将被应用以保持纵横比，并将一致保持到调用 <code>sensor.set_framesize()</code> 或 <code>sensor.set_windowing()</code> 。</p>
+</blockquote>
+<h1 id="image类--图像对象">Image类 – 图像对象</h1>
+<p>图像对象是机器视觉操作的基本对象。</p>
+<ul>
+<li>class image.Image(<em>path</em>[, <em>copy_to_fb=False</em>])</li>
+</ul>
+<p>或者，您可以传递一个宽度、高度和 <code>sensor.BINARY (tip)</code>, <code>sensor.GRAYSCALE (tip)</code>, 或 <code>sensor.RGB565 (tip)</code> 来创建新的空白图像对象(初始化为0 -黑色)。</p>
+<p>支持bmp/pgm/ppm/jpg/jpeg格式的图像文件。</p>
+<p>若 <code>copy_to_fb (tip)</code> 为True，图像会直接载入帧缓冲区，您就可以加载大幅图片了。若为False，图像会载入MicroPython的堆中，堆远比帧缓冲区小。</p>
+<p>你也可以将 <code>copy_to_fb (tip)</code> 设置为另一个图像对象，然后该缓冲区将被复制的图像覆盖， 从而更改传递的图像对象的像素格式和分辨率。</p>
+<blockquote>
+<p>tip
+如果 <code>copy_to_fb</code> 设置为True或另一个图像对象，则不继续使用传递给这个方法的旧图像对象或帧缓冲区图像对象。 由于此旧参考现在已过时，请使用此方法返回的新图像对象参考。</p>
+</blockquote>
+<p>图像支持“[]”记法。 令 <code>image[index] = 8/16-bit value (tip)</code> ，以便分配图像像素或 <code>image[index] (tip)</code> ，并得到一个图像像素，若是用于RGB图像的16位RGB565值的灰度图像， 这一像素则为8位。</p>
+<p>对于JPEG图像而言，“[]”使得您可以访问压缩的节数组形式的JPEG图像色块。由于JPEG图像是压缩的字节流形式，因而对数据组的读取和写入是不透明的。</p>
+<p>图像还支持读缓冲区操作。您可以把图像当作节数组对象，将图像输入所有类型的MicroPython函数。若您想传送一个图像，可以将它传递给UART /SPI/ I2C写入函数，可实现自动传送。</p>
+<h2 id="函数-1">函数</h2>
+<ol>
+<li>image.find_template(<em>template</em>, <em>threshold</em>[, <em>roi</em>[, <em>step=2</em>[, <em>search=image.SEARCH_EX</em>]]])</li>
+</ol>
+<p>尝试使用归一化互相关(NCC)算法在图像中找到第一个模板匹配的位置。返回匹配位置的边界框元组(x, y, w, h)，否则返回None。</p>
+<p><code>template (tip)</code> 是一个与这个图像对象相匹配的小图像对象。注意：两图像须都为灰度图。</p>
+<p><code>threshold (tip)</code> 是浮点数（0.0-1.0），其中较小的值在提高检测速率同时增加误报率。相反，较高的值会降低检测速率，同时降低误报率。</p>
+<p><code>roi (tip)</code> 是感兴趣区域的矩形元组(x，y，w，h)。如果未指定，ROI即整个图像的图像矩形。 操作范围仅限于 <code>roi (tip)</code> 区域内的像素。</p>
+<p><code>step (tip)</code> 是查找模板时需要跳过的像素数量。跳过像素可大大提高算法运行的速度。该方法只适用于SERACH_EX模式下的算法。</p>
+<p><code>search (tip)</code> 可为 <code>image.SEARCH_DS (tip)</code> or <code>image.SEARCH_EX (tip)</code>. <code>image.SEARCH_DS (tip)</code> 搜索模板所用算法较 <code>image.SEARCH_EX (tip)</code> 更快，但若模板位于图像边缘周围，可能无法成功搜索。<code>image.SEARCH_EX (tip)</code> 可对图像进行较为详尽的搜索，但其运行速度远低于 <code>image.SEARCH_DS (tip)</code> 。仅支持灰度图像。</p>
+<ol start="2">
+<li>image.draw_rectangle(<em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>[, <em>color</em>[, <em>thickness=1</em>[, <em>fill=False</em>]]])</li>
+</ol>
+<p>在图像上绘制一个矩形。 您可以单独传递x，y，w，h或作为元组(x，y，w，h)传递。</p>
+<p><code>color (tip)</code> 是用于灰度或RGB565图像的RGB888元组。默认为白色。但是，您也可以传递灰度图像的基础像素值(0-255)或RGB565图像的字节反转RGB565值。</p>
+<p><code>thickness (tip)</code> 控制线的粗细像素。</p>
+<p>将 <code>fill (tip)</code> 设置为True以填充矩形。</p>
+<p>返回图像对象，以便您可以使用 <code>.</code> 表示法调用另一个方法。</p>
+<p>不支持压缩图像和bayer图像。</p>
+<h1 id="uart类--双向串行通信总线">UART类 – 双向串行通信总线</h1>
+<p>UART对象可通过下列方式创建和初始化:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">UART</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9600</span><span class="p">,</span> <span class="n">timeout_char</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>                         <span class="c1"># i使用给定波特率初始化</span>
+</span></span><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="mi">9600</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">parity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">timeout_char</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># 使用给定参数初始化</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>位数可为7、8、9。奇偶性可为None、0（偶）、1（奇）。停止位可为1或2。</p>
+<p><em>注意:</em> 奇偶性为None时，仅支持位数为8和9。启用奇偶性时，仅支持位数为7和8。</p>
+<p>UART对象与流对象相似，其读取与写入均使用流对象方法:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>       <span class="c1"># 读取10字符，返回一个字节对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>         <span class="c1"># 读取所有可用字符</span>
+</span></span><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>     <span class="c1"># 读取一条线</span>
+</span></span><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>  <span class="c1"># 读取并存入缓冲区</span>
+</span></span><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>   <span class="c1"># 写入3个字符</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>单个字符可通过下列方法读取/写入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">readchar</span><span class="p">()</span>     <span class="c1"># 读取一个字符，并返回其整数形式</span>
+</span></span><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">writechar</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1">#写入一个字符</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>检查是否有内容有待读取，请使用:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">uart</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>          <span class="c1"># 返回等待的字符数量</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>warning
+函数 <code>read</code> 、 <code>write</code> 等适用于MicroPython v1.3.4。早期版本请使用 <code>uart.send</code> 和 <code>uart.recv</code> 。</p>
+</blockquote>
+<h2 id="函数-2">函数</h2>
+<ol>
+<li>UART.init(<em>baudrate</em>, <em>bits=8</em>, <em>parity=None</em>, <em>stop=1</em>, <em>*</em>, <em>timeout=1000</em>, <em>flow=0</em>, <em>timeout_char=0</em>, <em>read_buf_len=64</em>)</li>
+</ol>
+<p>使用给定参数初始化UART总线:</p>
+<ul>
+<li><code>baudrate (tip)</code> 为时钟频率。</li>
+<li><code>bits (tip)</code> 为每个字符的位数，7、8或9。</li>
+<li><code>parity (tip)</code> 为奇偶校验， <code>None (tip)</code> ，0（偶）或1（奇）。</li>
+<li><code>stop (tip)</code> 为停止位的数量，1或2</li>
+<li><code>flow (tip)</code> 设置流控制类型。可为0、 <code>UART.RTS (tip)</code>, <code>UART.CTS (tip)</code> 或 <code>UART.RTS | UART.CTS (tip)</code>.</li>
+<li><code>timeout (tip)</code> 为等待读取/写入首个字符的超时时长（以毫秒为单位）。</li>
+<li><code>timeout_char (tip)</code> 为读取或写入时字符间等待的超时时长（以毫秒为单位）。</li>
+<li><code>read_buf_len (tip)</code> 为读取缓冲区的字符长度（0为禁用）。</li>
+</ul>
+<p>若波特率不能设置为期望值的5%以内，此方法将会引发故障</p>
+<blockquote>
+<p>warning
+奇偶校验为None时，仅支持8位和9位。启用奇偶校验时，仅支持7位和8位。</p>
+</blockquote>
+            </div>
             
-            <div class="terms-root">
-                
-                
-
-
-<div class="card-large">
-    <div class="card-large-img">
-
-        
-                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/science_surf_github/science_surf_github.jpg" alt='image loading failed'>
-        
-    </div>
-    <div class="card-large-content">
-        <div class="up-title"><a href="http://gzpeng233.github.io/en/posts/science_surf_github/">【杂货】如何科学连接GitHub</a></div>
-        <div class="up-date">
-            <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2023-1-13 &nbsp;</span>
-            <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-1-13 &nbsp;</span>
-            <span class="no-wrap"><i class="fa fa-folder"></i>
-                
-                    includedIn:
+                <div class="tags">
                     
-                        <a href='
-                                        /en/categories/%E6%9D%82%E8%B4%A7
+                    <span class="down-type-item">
+                        <div class="type-text">
+                            <a href='
+                                        /en/tags/%E7%94%B5%E8%B5%9B
                                     '>
-                                杂货
+                                <i class="fa fa-tag"></i> 电赛
                             </a>
-                
-            </span>
-        </div>
-        <div class="down-summary"><p>开发最常见的问题就是Github连接较慢，如何才能连接Github不掉网，这里记录我使用的几种方式</p></div>
-    </div>
-    <div class="card-readmore">
-        <a href="http://gzpeng233.github.io/en/posts/science_surf_github/">
-            <span><i class="fa fa-arrow-right"></i></span>
-        </a>
-    </div>
-</div>
-
-
-
-    
-
-
-    <div class="down-type">
-        
-        <span class="down-type-item">
-            <div class="shuxian-root">
-                <div class="shuxian"></div>
-            </div>
-            <div class="type-text">
-                <a href='
-                            /en/tags/%E6%9D%82%E8%B4%A7
-                        '>
-                    <i class="fa fa-tag"></i> 杂货
-                </a>
-            </div>
-        </span>
-        
-        <span class="down-type-item">
-            <div class="shuxian-root">
-                <div class="shuxian"></div>
-            </div>
-            <div class="type-text">
-                <a href='
-                            /en/tags/github
-                        '>
-                    <i class="fa fa-tag"></i> Github
-                </a>
-            </div>
-        </span>
-        
-    </div>
-
-<div class="dang"></div>
-            </div>
-            
-            <div class="terms-root">
-                
-                
-
-
-<div class="card-large">
-    <div class="card-large-img">
-
-        
-                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/trouble_solve/trouble_solve.jpg" alt='image loading failed'>
-        
-    </div>
-    <div class="card-large-content">
-        <div class="up-title"><a href="http://gzpeng233.github.io/en/posts/trouble_solve/">【杂货】一些开发常见问题</a></div>
-        <div class="up-date">
-            <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2023-1-10 &nbsp;</span>
-            <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-1-20 &nbsp;</span>
-            <span class="no-wrap"><i class="fa fa-folder"></i>
-                
-                    includedIn:
+                        </div>
+                    </span>
                     
-                        <a href='
-                                        /en/categories/%E6%9D%82%E8%B4%A7
-                                    '>
-                                杂货
-                            </a>
-                
-            </span>
-        </div>
-        <div class="down-summary"><p>记录一些开发常见的问题</p></div>
-    </div>
-    <div class="card-readmore">
-        <a href="http://gzpeng233.github.io/en/posts/trouble_solve/">
-            <span><i class="fa fa-arrow-right"></i></span>
-        </a>
-    </div>
-</div>
-
-
-
-    
-
-
-    <div class="down-type">
-        
-        <span class="down-type-item">
-            <div class="shuxian-root">
-                <div class="shuxian"></div>
-            </div>
-            <div class="type-text">
-                <a href='
-                            /en/tags/%E6%9D%82%E8%B4%A7
-                        '>
-                    <i class="fa fa-tag"></i> 杂货
-                </a>
-            </div>
-        </span>
-        
-    </div>
-
-<div class="dang"></div>
-            </div>
+                </div>
             
-            <div class="terms-root">
-                
-                
-
-
-<div class="card-large">
-    <div class="card-large-img">
-
+        </div>
         
-                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/collection/collection.jpg" alt='image loading failed'>
-        
-    </div>
-    <div class="card-large-content">
-        <div class="up-title"><a href="http://gzpeng233.github.io/en/posts/collection/">【杂货】一些杂货</a></div>
-        <div class="up-date">
-            <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2022-12-15 &nbsp;</span>
-            <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-1-8 &nbsp;</span>
-            <span class="no-wrap"><i class="fa fa-folder"></i>
-                
-                    includedIn:
+            
+                <div class="pre-next">
                     
-                        <a href='
-                                        /en/categories/%E6%9D%82%E8%B4%A7
-                                    '>
-                                杂货
-                            </a>
-                
-            </span>
-        </div>
-        <div class="down-summary"><p>下面是一些杂货，可能会用得到，不定时更新</p></div>
-    </div>
-    <div class="card-readmore">
-        <a href="http://gzpeng233.github.io/en/posts/collection/">
-            <span><i class="fa fa-arrow-right"></i></span>
+    
+        
+        <a href="http://gzpeng233.github.io/en/posts/nuedc_code/" class="pre pre-last" style="text-align: center;">
+            <span class="pre-icon"><i class="fa fa-hand-o-left"></i></span>
+            <div class="pre-title-root">
+                <span>【电赛】电赛编程指南</span>
+            </div>
         </a>
-    </div>
-</div>
-
-
-
+        
+    
     
 
-
-    <div class="down-type">
+                </div>
+            
         
-        <span class="down-type-item">
-            <div class="shuxian-root">
-                <div class="shuxian"></div>
-            </div>
-            <div class="type-text">
-                <a href='
-                            /en/tags/%E6%9D%82%E8%B4%A7
-                        '>
-                    <i class="fa fa-tag"></i> 杂货
-                </a>
-            </div>
-        </span>
-        
-    </div>
+    
+</div>
 
-<div class="dang"></div>
-            </div>
+    
+        <div class="content-last">
+            
+                <button class="aixin content-last-item efct-button">
+                    <i class="fa fa-heart"></i>
+                </button>
+            
+            
+                <button class="pinglun content-last-item efct-button">
+                    <i class="fa fa-comment"></i>
+                </button>
             
         </div>
     
-</div>
 
 
             </div>
@@ -477,6 +683,11 @@
                 
 <div class="zhuti-r-0">
     <div class="zhuti-r-1">
+        
+            <div class="button-r">
+                <button class="button-mulu efct-button" type="button"><span><i class="fa fa-bars"></i></span><span class="bars-text"> content</span></button>
+                <button class="button-comment efct-button" type="button"><span><i class="fa fa-comment"></i></span><span class="comment-text"> comment</span></button>
+            </div>
         
         <div id="r1">
             
@@ -542,33 +753,16 @@
 
 
 
+    
+    
+
 
 <div class="other">
     <div class="other-up">
-        <div class="other-qita text-wbd">latest Posts</div>
+        <div class="other-qita text-wbd">Related Posts</div>
         <div class="xian"></div>
     </div>
     <div class="list">
-        
-            <a href="http://gzpeng233.github.io/en/posts/openmv_code/">
-                
-<a href="http://gzpeng233.github.io/en/posts/openmv_code/">
-    <div class="list-item">
-        <div class="icon-other-root">
-            
-                <div class="icon-other" style="background-image: url( /images/posts/openmv_code/openmv_code.jpg );"></div>
-            
-        </div>
-        <div class="list-right">
-            <div class="other-title">
-                【电赛】openmv 编程指南
-            </div>
-            <div class="other-summary"><p>openmv开发指南</p></div>
-            <div class="other-date">2023-2-9</div>
-        </div>
-    </div>
-</a>
-            </a>
         
             <a href="http://gzpeng233.github.io/en/posts/nuedc_code/">
                 
@@ -585,26 +779,6 @@
             </div>
             <div class="other-summary"><p>单片机 STM32 控制需要许多模块之间的配合</p></div>
             <div class="other-date">2023-2-6</div>
-        </div>
-    </div>
-</a>
-            </a>
-        
-            <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
-                
-<a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
-    <div class="list-item">
-        <div class="icon-other-root">
-            
-                <div class="icon-other" style="background-image: url( /images/posts/wxminiprogram_common_problem/wxminiprogram_common_problem.jpg );"></div>
-            
-        </div>
-        <div class="list-right">
-            <div class="other-title">
-                【微信小程序】常见问题
-            </div>
-            <div class="other-summary"><p>微信小程序开发过程中有许多常见问题，虽难度较小，但解决方式不易找出，故列举如下</p></div>
-            <div class="other-date">2023-2-4</div>
         </div>
     </div>
 </a>
@@ -650,17 +824,121 @@
 </a>
             </a>
         
+            <a href="http://gzpeng233.github.io/en/posts/communication_protocol/">
+                
+<a href="http://gzpeng233.github.io/en/posts/communication_protocol/">
+    <div class="list-item">
+        <div class="icon-other-root">
+            
+                <div class="icon-other" style="background-image: url( /images/posts/communication_protocol/communication_protocol.jpg );"></div>
+            
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                【电赛】通信协议
+            </div>
+            <div class="other-summary">通信 通信的目的： 将一个设备的数据传送到另一个设备， 扩展硬件系统
+通信协议： 制定通信的规则， 通信双方按照协议规则进行数据收发
+有关通信协议
+::: tabs
+@tab 双工
+全双工是指双方可以同时像对方发送数据，同时接收对方发送来的数据 半双工是指双方之间可以互相通信，但不能同时通信，即设备 A 像 B 发送数据，此时设备 B 只能接收数据，不能再向设备 A 发送数据 单工是指只能由一个设备向另一个设备发送数据 @tab 时钟
+同步是指双方的时钟必须同步，即同时产生上升沿，同时产生下降沿 异步对双方的时钟要求不大，但双方的读写频率需相同 @tab 电平
+单端是指常见的 3.3V 与 GND 或 5V 与 GND 差分是指通过两个电压之间的差值来传送数据 @tab 设备
+点对点即是两两通信 多设备则可多台设备互相通信 :::
+串口通信 串口是一种应用十分广泛的通讯接口， 串口成本低、 容易使用、 通信线路简单， 可实现两个设备的互相通信
+单片机的串口可以使单片机与单片机、 单片机与电脑、 单片机与各式各样的模块互相通信， 极大地扩展了单片机的应用范围， 增强了单片机系统的硬件实力</div>
+            <div class="other-date">2023-1-15</div>
+        </div>
+    </div>
+</a>
+            </a>
+        
+            <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
+                
+<a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
+    <div class="list-item">
+        <div class="icon-other-root">
+            
+                <div class="icon-other" style="background-image: url( /images/posts/wxminiprogram_common_problem/wxminiprogram_common_problem.jpg );"></div>
+            
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                【微信小程序】常见问题
+            </div>
+            <div class="other-summary"><p>微信小程序开发过程中有许多常见问题，虽难度较小，但解决方式不易找出，故列举如下</p></div>
+            <div class="other-date">2023-2-4</div>
+        </div>
+    </div>
+</a>
+            </a>
+        
     </div>
 </div>
         </div>
         <div id="r2">
-            
+            <div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: "CAVZmuQTjsDAwzKcaoEpIlrs-gzGzoHsz",
+        appKey: "U0q8xkp4hS74nTNbUFduT3SE",
+        avatar: "robohash",
+        placeholder: "输入你的评论",
+        requiredFields: ["nick"],
+        visitor:  true ,
+        pageSize:  5 ,
+});
+</script>
+
         </div> 
     </div>
 </div>
 
             </div>
         </div>
+    </div>
+</div>
+
+    
+
+<div class="sponsor">
+    <div class="sponsor-self">
+        <div class="sponsor-title">Sponsor</div>
+        <div class="sponsor-btn">
+            
+                
+                    
+                        <div class="sponsor-btn-1 border-r">Wechat</div>
+                    
+                
+                
+            
+                
+                    
+                        <div class="sponsor-btn-2 border-l">Alipay</div>
+                    
+                
+                
+            
+        </div>
+        
+        <div class="sponsor-img">
+            
+                
+                    <img class="sponsor-img-1" src="/images/sponsor/wechat.jpg" alt="">
+                
+                
+            
+                
+                    <img class="sponsor-img-2" src="/images/sponsor/alipay.jpg" alt="" style="display: none;">
+                
+                
+            
+        </div>
+        <div class="cancel efct-button">cancel</div>
     </div>
 </div>
 

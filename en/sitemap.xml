@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://gzpeng233.github.io/en/posts/nuedc_code/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <loc>http://gzpeng233.github.io/en/posts/openmv_code/</loc>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://gzpeng233.github.io/posts/nuedc_code/"
+                href="http://gzpeng233.github.io/posts/openmv_code/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://gzpeng233.github.io/en/posts/nuedc_code/"
+                href="http://gzpeng233.github.io/en/posts/openmv_code/"
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/categories/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/posts/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/tags/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -55,7 +55,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -68,7 +68,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/tags/%E7%94%B5%E8%B5%9B/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -81,7 +81,7 @@
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/categories/%E7%94%B5%E8%B5%9B/</loc>
-    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <lastmod>2023-02-09T16:58:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -91,6 +91,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://gzpeng233.github.io/en/categories/%E7%94%B5%E8%B5%9B/"
+                />
+  </url><url>
+    <loc>http://gzpeng233.github.io/en/posts/nuedc_code/</loc>
+    <lastmod>2023-02-07T18:30:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://gzpeng233.github.io/posts/nuedc_code/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://gzpeng233.github.io/en/posts/nuedc_code/"
                 />
   </url><url>
     <loc>http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/</loc>
