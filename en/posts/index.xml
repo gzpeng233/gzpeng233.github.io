@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Feb 2023 23:15:19 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>【电赛】STM32索引文档</title>
+      <title>【电赛】STM32开发指南</title>
       <link>http://gzpeng233.github.io/en/posts/stm32_help/</link>
       <pubDate>Thu, 09 Feb 2023 23:15:19 +0800</pubDate>
       
       <guid>http://gzpeng233.github.io/en/posts/stm32_help/</guid>
-      <description>&lt;p&gt;STM32开发索引文档&lt;/p&gt;</description>
+      <description>&lt;p&gt;STM32 开发帮助文档，主要使用 STM32F103C8T6 芯片，标准库开发&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -23,15 +23,6 @@
       
       <guid>http://gzpeng233.github.io/en/posts/openmv_code/</guid>
       <description>&lt;p&gt;openmv开发指南&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>【电赛】电赛编程指南</title>
-      <link>http://gzpeng233.github.io/en/posts/nuedc_code/</link>
-      <pubDate>Mon, 06 Feb 2023 17:20:16 +0800</pubDate>
-      
-      <guid>http://gzpeng233.github.io/en/posts/nuedc_code/</guid>
-      <description>&lt;p&gt;单片机 STM32 控制需要许多模块之间的配合&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -3,21 +3,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>学点 | 【电赛】通信协议</title>
-    <meta name="description" content="一些通信协议 ">
-    <link rel="canonical" href="http://gzpeng233.github.io/en/posts/communication_protocol/" />
+    <title>学点 | 指南</title>
+    <meta name="description" content=" ">
+    <link rel="canonical" href="http://gzpeng233.github.io/en/tags/%E6%8C%87%E5%8D%97/" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <meta property="og:title" content="【电赛】通信协议" />
-<meta property="og:description" content="一些通信协议" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://gzpeng233.github.io/en/posts/communication_protocol/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-15T23:01:00+08:00" />
-<meta property="article:modified_time" content="2023-01-30T14:02:00+08:00" />
+    <meta property="og:title" content="指南" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://gzpeng233.github.io/en/tags/%E6%8C%87%E5%8D%97/" />
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="【电赛】通信协议"/>
-<meta name="twitter:description" content="一些通信协议"/>
+<meta name="twitter:title" content="指南"/>
+<meta name="twitter:description" content=""/>
 
     
         
@@ -211,41 +209,29 @@
 
 
         <div id="content">
+    
 
 
 
 
+
+
+    
+        
+    
 
 
 
 
     <div class="hero">
         
-            <div class="hero-img">
-                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/communication_protocol/communication_protocol.jpg" alt="">
-            </div>
-        
+            
+                <div class="hero-img">
+                    <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/stm32_help/stm32_help.jpg" alt="">
+                </div>
+            
         <div class="hero-content">
-            <div class="hero-title">【电赛】通信协议</div>
-            <div class="hero-subtitle"></div>
-            <div class="hero-date">
-                    <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2023-1-15 &nbsp;</span>
-                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-1-30 &nbsp;</span>
-                    <span class="no-wrap"><i class="fa fa-folder"></i>
-                        includedIn:
-                        
-                            <a href='
-                                /en/categories/%E7%94%B5%E8%B5%9B
-                            '>
-                                电赛
-                            </a>
-                    </span>    
-            </div>
-            <div class="timelong">
-                <span class="no-wrap"><i class="fa fa-pencil"></i> wordsCount: 273 &nbsp;</span>
-                <span class="no-wrap"><i class="fa fa-clock-o"></i> readingTime: 2 mins &nbsp;</span>
-                <span class="no-wrap"><i class="fa fa-eye"></i> viewers: <span id="busuanzi_value_page_pv"></span></span>
-            </div>
+            <h1 class="hero-title">Tag: 指南</h1>
         </div>
     </div>
 
@@ -264,7 +250,7 @@
     
 
 
-<div class="content-root">
+<div class="terms-body">
     <div class="long">
         <button class="tosides-1 text-wbd">
             <i class="fa fa-arrow-right"></i>
@@ -277,269 +263,87 @@
         </button>
     </div>
     
-        <div class="content">
-            <div class="content-self">
-                <h1 id="通信">通信</h1>
-<p>通信的目的： 将一个设备的数据传送到另一个设备， 扩展硬件系统</p>
-<p>通信协议： 制定通信的规则， 通信双方按照协议规则进行数据收发</p>
-<p>有关通信协议</p>
-<p><img src="/images/posts/communication_protocol/content_1.jpg" alt="有关通信协议" title="有关通信协议"></p>
-<p>::: tabs</p>
-<p>@tab 双工</p>
-<ul>
-<li>全双工是指双方可以同时像对方发送数据，同时接收对方发送来的数据</li>
-<li>半双工是指双方之间可以互相通信，但不能同时通信，即设备 A 像 B 发送数据，此时设备 B 只能接收数据，不能再向设备 A 发送数据</li>
-<li>单工是指只能由一个设备向另一个设备发送数据</li>
-</ul>
-<p>@tab 时钟</p>
-<ul>
-<li>同步是指双方的时钟必须同步，即同时产生上升沿，同时产生下降沿</li>
-<li>异步对双方的时钟要求不大，但双方的读写频率需相同</li>
-</ul>
-<p>@tab 电平</p>
-<ul>
-<li>单端是指常见的 3.3V 与 GND 或 5V 与 GND</li>
-<li>差分是指通过两个电压之间的差值来传送数据</li>
-</ul>
-<p>@tab 设备</p>
-<ul>
-<li>点对点即是两两通信</li>
-<li>多设备则可多台设备互相通信</li>
-</ul>
-<p>:::</p>
-<h1 id="串口通信">串口通信</h1>
-<p>串口是一种应用十分广泛的通讯接口， 串口成本低、 容易使用、 通信线路简单， 可实现两个设备的互相通信</p>
-<p>单片机的串口可以使单片机与单片机、 单片机与电脑、 单片机与各式各样的模块互相通信， 极大地扩展了单片机的应用范围， 增强了单片机系统的硬件实力</p>
-<ol>
-<li>硬件电路</li>
-</ol>
-<ul>
-<li>
-<p>简单双向串口通信有两根通信线（发送端TX和接收端RX）</p>
-</li>
-<li>
-<p>TX与RX要交叉连接</p>
-</li>
-<li>
-<p>当只需单向的数据传输时， 可以只接一根通信线</p>
-</li>
-<li>
-<p>当电平标准不一致时， 需要加电平转换芯片</p>
-</li>
-</ul>
-<p><img src="/images/posts/communication_protocol/content_2.jpg" alt="串口通信" title="串口通信"></p>
-<ol start="2">
-<li>电平标准</li>
-</ol>
-<p>电平标准是数据1和数据0的表达方式， 是传输线缆中人为规定的电压与数据的对应关系， 串口常用的电平标准有如下三种：</p>
-<ul>
-<li>
-<p>TTL电平： +3.3V 或 +5V 表示 1， 0V 表示0</p>
-</li>
-<li>
-<p>RS232电平： -3~-15V 表示 1， +3~+15V 表示 0</p>
-</li>
-<li>
-<p>RS485电平： 两线压差 +2~+6V 表示 1， -2~-6V 表示 0（差分信号）</p>
-</li>
-</ul>
-<ol start="3">
-<li>串口参数及时序</li>
-</ol>
-<p>波特率： 串口通信的速率，单位为 码元 /秒</p>
-<ul>
-<li>
-<p>起始位： 标志一个数据帧的开始， 固定为低电平</p>
-</li>
-<li>
-<p>数据位： 数据帧的有效载荷， 1为高电平， 0为低电平， 低位先行</p>
-</li>
-<li>
-<p>校验位： 用于数据验证， 根据数据位计算得来</p>
-</li>
-<li>
-<p>停止位： 用于数据帧间隔， 固定为高电平</p>
-</li>
-</ul>
-<blockquote>
-<p>tip
-1.波特率的单位是 码元 /秒，而比特率的单位是 位 / 秒，仅在二进制解析时两者数值相等</p>
-<p>2.低位先行是指发送时首先发送最低位，然后是次低位，依此类推</p>
-</blockquote>
-<p><img src="/images/posts/communication_protocol/content_3.jpg" alt="时序" title="时序"></p>
-<p><img src="/images/posts/communication_protocol/content_4.jpg" alt="串口时序实例" title="串口时序实例"></p>
-<h1 id="i2c-通信">I2C 通信</h1>
-<p>I2C 总线（Inter IC BUS） 是由 Philips 公司开发的一种通用数据总线</p>
-<ul>
-<li>
-<p>两根通信线： SCL（Serial Clock） 、 SDA（Serial Data）</p>
-</li>
-<li>
-<p>同步， 半双工</p>
-</li>
-<li>
-<p>带数据应答</p>
-</li>
-<li>
-<p>支持总线挂载多设备（一主多从、 多主多从）</p>
-</li>
-</ul>
-<ol>
-<li>硬件电路</li>
-</ol>
-<ul>
-<li>
-<p>所有 I2C 设备的 SCL 连在一起， SDA 连在一起</p>
-</li>
-<li>
-<p>设备的 SCL 和 SDA 均要配置成开漏输出模式</p>
-</li>
-<li>
-<p>SCL 和 SDA 各添加一个上拉电阻， 阻值一般为 4.7KΩ 左右</p>
-</li>
-</ul>
-<blockquote>
-<p>tip
-开漏输出模式下不仅可以输出，也可以输入</p>
-</blockquote>
-<p><img src="/images/posts/communication_protocol/content_5.jpg" alt="I2C通信" title="I2C通信"></p>
-<ol start="2">
-<li>I2C 基本时序单元</li>
-</ol>
-<ul>
-<li>
-<p>起始条件： SCL 高电平期间， SDA 从高电平切换到低电平</p>
-</li>
-<li>
-<p>终止条件： SCL 高电平期间， SDA 从低电平切换到高电平</p>
-</li>
-<li>
-<p>发送一个字节： SCL 低电平期间， 主机将数据位依次放到 SDA 线上（高位先行） ， 然后释放 SCL， 从机将在 SCL 高电平期间读取数据位，所以 SCL 高电平期间 SDA 不允许有数据变化， 依次循环上述过程8次，即可发送一个字节</p>
-</li>
-<li>
-<p>接收一个字节： SCL 低电平期间， 从机将数据位依次放到 SDA 线上（高位先行） ， 然后释放 SCL， 主机将在 SCL 高电平期间读取数据位，所以 SCL 高电平期间 SDA 不允许有数据变化， 依次循环上述过程8次，即可接收一个字节（主机在接收之前， 需要释放SDA）</p>
-</li>
-<li>
-<p>发送应答： 主机在接收完一个字节之后， 在下一个时钟发送一位数据， 数据0表示应答， 数据 1 表示非应答</p>
-</li>
-<li>
-<p>接收应答： 主机在发送完一个字节之后， 在下一个时钟接收一位数据， 判断从机是否应答， 数据 0 表示应答， 数据 1 表示非应答（主机在接收之前， 需要释放 SDA）</p>
-</li>
-</ul>
-<p><img src="/images/posts/communication_protocol/content_6.jpg" alt="基本时序单元" title="基本时序单元"></p>
-<p><img src="/images/posts/communication_protocol/content_7.jpg" alt="基本时序单元" title="基本时序单元"></p>
-<p><img src="/images/posts/communication_protocol/content_8.jpg" alt="基本时序单元" title="基本时序单元"></p>
-<p><img src="/images/posts/communication_protocol/content_9.jpg" alt="基本时序单元" title="基本时序单元"></p>
-<ol start="3">
-<li>I2C 基本时序</li>
-</ol>
-<p>I2C 通信要用上面的基本时序单元组成基本时序才可实现通信</p>
-<ul>
-<li>指定地址写</li>
-</ul>
-<p>对于指定设备（Slave Address） ， 在指定地址（Reg Address） 下，写入指定数据（Data）</p>
-<p><img src="/images/posts/communication_protocol/content_10.jpg" alt="指定地址写" title="指定地址写"></p>
-<ul>
-<li>当前地址读</li>
-</ul>
-<p>对于指定设备（Slave Address） ， 在当前地址指针指示的地址下，读取从机数据（Data）</p>
-<p><img src="/images/posts/communication_protocol/content_11.jpg" alt="当前地址读" title="当前地址读"></p>
-<ul>
-<li>指定地址读</li>
-</ul>
-<p>对于指定设备（Slave Address） ， 在指定地址（Reg Address） 下，读取从机数据（Data）</p>
-<p><img src="/images/posts/communication_protocol/content_12.jpg" alt="指定地址读" title="指定地址读"></p>
-<h1 id="spi通信">SPI通信</h1>
-<p>SPI，Serial Peripheral Interface，串行外围设备接口</p>
-<ul>
-<li>同步、串行、全双工</li>
-<li>主从工作方式，一主一从或一主多从</li>
-<li>四线控制
-<ul>
-<li>SDO，主设备数据输出，从设备数据输入（又称MOSI，master output slave input）</li>
-<li>SDI，主设备数据输入，从设备数据输出（又称MISO，master input slave output）</li>
-<li>SCLK，时钟信号，由主设备产生</li>
-<li>CS，片选信号，从设备使能信号，由主设备控制</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>
-<p>硬件电路图</p>
-<p><img src="/images/posts/communication_protocol/content13.jpg" alt="硬件电路图" title="硬件电路图"></p>
-</li>
-<li>
-<p>时序图及 SPI 模式</p>
-<p><img src="/images/posts/communication_protocol/content14.jpg" alt="时序图" title="时序图"></p>
-<p><img src="/images/posts/communication_protocol/content15.jpg" alt="SPI四种模式" title="SPI四种模式"></p>
-</li>
-</ol>
-<h1 id="can通信">CAN通信</h1>
-<p>相关内容前去 <a href="https://gzpeng233.github.io/posts/can">学点 | CAN通信协议</a> 查看</p>
-
-            </div>
+        <div class="terms-row">
             
-                <div class="tags">
+            <div class="terms-root">
+                
+                
+
+
+<div class="card-large">
+    <div class="card-large-img">
+
+        
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/stm32_help/stm32_help.jpg" alt='image loading failed'>
+        
+    </div>
+    <div class="card-large-content">
+        <div class="up-title"><a href="http://gzpeng233.github.io/en/posts/stm32_help/">【电赛】STM32开发指南</a></div>
+        <div class="up-date">
+            <span class="no-wrap"><i class="fa fa-calendar"></i> postedOn: 2023-2-9 &nbsp;</span>
+            <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> updatedOn: 2023-2-10 &nbsp;</span>
+            <span class="no-wrap"><i class="fa fa-folder"></i>
+                
+                    includedIn:
                     
-                    <span class="down-type-item">
-                        <div class="type-text">
-                            <a href='
-                                        /en/tags/%E7%94%B5%E8%B5%9B
+                        <a href='
+                                        /en/categories/%E7%94%B5%E8%B5%9B
                                     '>
-                                <i class="fa fa-tag"></i> 电赛
+                                电赛
                             </a>
-                        </div>
-                    </span>
-                    
-                </div>
-            
+                
+            </span>
         </div>
-        
-            
-                <div class="pre-next">
-                    
-    
-        
-        <a href="http://gzpeng233.github.io/en/posts/science_surf_github/" class="pre">
-            <span class="pre-icon"><i class="fa fa-hand-o-left"></i></span>
-            <div class="pre-title-root">
-                <span>【杂货】如何科学连接GitHub</span>
-            </div>
+        <div class="down-summary"><p>STM32 开发帮助文档，主要使用 STM32F103C8T6 芯片，标准库开发</p></div>
+    </div>
+    <div class="card-readmore">
+        <a href="http://gzpeng233.github.io/en/posts/stm32_help/">
+            <span><i class="fa fa-arrow-right"></i></span>
         </a>
-        
-
-        
-        <a href="http://gzpeng233.github.io/en/posts/search_history_page/" class="next">
-            <div class="next-title-root">
-                <span>【微信小程序】搜索历史页面</span>
-            </div>
-            <span class="next-icon"><i class="fa fa-hand-o-right"></i></span>
-        </a>
-        
-
-    
-    
-
-                </div>
-            
-        
-    
+    </div>
 </div>
 
+
+
     
-        <div class="content-last">
-            
-                <button class="aixin content-last-item efct-button">
-                    <i class="fa fa-heart"></i>
-                </button>
-            
-            
-                <button class="pinglun content-last-item efct-button">
-                    <i class="fa fa-comment"></i>
-                </button>
+
+
+    <div class="down-type">
+        
+        <span class="down-type-item">
+            <div class="shuxian-root">
+                <div class="shuxian"></div>
+            </div>
+            <div class="type-text">
+                <a href='
+                            /en/tags/%E7%94%B5%E8%B5%9B
+                        '>
+                    <i class="fa fa-tag"></i> 电赛
+                </a>
+            </div>
+        </span>
+        
+        <span class="down-type-item">
+            <div class="shuxian-root">
+                <div class="shuxian"></div>
+            </div>
+            <div class="type-text">
+                <a href='
+                            /en/tags/%E6%8C%87%E5%8D%97
+                        '>
+                    <i class="fa fa-tag"></i> 指南
+                </a>
+            </div>
+        </span>
+        
+    </div>
+
+<div class="dang"></div>
+            </div>
             
         </div>
     
+</div>
 
 
             </div>
@@ -547,11 +351,6 @@
                 
 <div class="zhuti-r-0">
     <div class="zhuti-r-1">
-        
-            <div class="button-r">
-                <button class="button-mulu efct-button" type="button"><span><i class="fa fa-bars"></i></span><span class="bars-text"> content</span></button>
-                <button class="button-comment efct-button" type="button"><span><i class="fa fa-comment"></i></span><span class="comment-text"> comment</span></button>
-            </div>
         
         <div id="r1">
             
@@ -617,13 +416,10 @@
 
 
 
-    
-    
-
 
 <div class="other">
     <div class="other-up">
-        <div class="other-qita text-wbd">Related Posts</div>
+        <div class="other-qita text-wbd">latest Posts</div>
         <div class="xian"></div>
     </div>
     <div class="list">
@@ -663,6 +459,26 @@
             </div>
             <div class="other-summary"><p>openmv开发指南</p></div>
             <div class="other-date">2023-2-9</div>
+        </div>
+    </div>
+</a>
+            </a>
+        
+            <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
+                
+<a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
+    <div class="list-item">
+        <div class="icon-other-root">
+            
+                <div class="icon-other" style="background-image: url( /images/posts/wxminiprogram_common_problem/wxminiprogram_common_problem.jpg );"></div>
+            
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                【微信小程序】常见问题
+            </div>
+            <div class="other-summary"><p>微信小程序开发过程中有许多常见问题，虽难度较小，但解决方式不易找出，故列举如下</p></div>
+            <div class="other-date">2023-2-4</div>
         </div>
     </div>
 </a>
@@ -708,91 +524,17 @@
 </a>
             </a>
         
-            <a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
-                
-<a href="http://gzpeng233.github.io/en/posts/wxminiprogram_common_problem/">
-    <div class="list-item">
-        <div class="icon-other-root">
-            
-                <div class="icon-other" style="background-image: url( /images/posts/wxminiprogram_common_problem/wxminiprogram_common_problem.jpg );"></div>
-            
-        </div>
-        <div class="list-right">
-            <div class="other-title">
-                【微信小程序】常见问题
-            </div>
-            <div class="other-summary"><p>微信小程序开发过程中有许多常见问题，虽难度较小，但解决方式不易找出，故列举如下</p></div>
-            <div class="other-date">2023-2-4</div>
-        </div>
-    </div>
-</a>
-            </a>
-        
     </div>
 </div>
         </div>
         <div id="r2">
-            <div id="vcomments"></div>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments',
-        appId: "CAVZmuQTjsDAwzKcaoEpIlrs-gzGzoHsz",
-        appKey: "U0q8xkp4hS74nTNbUFduT3SE",
-        avatar: "robohash",
-        placeholder: "输入你的评论",
-        requiredFields: ["nick"],
-        visitor:  true ,
-        pageSize:  5 ,
-});
-</script>
-
+            
         </div> 
     </div>
 </div>
 
             </div>
         </div>
-    </div>
-</div>
-
-    
-
-<div class="sponsor">
-    <div class="sponsor-self">
-        <div class="sponsor-title">Sponsor</div>
-        <div class="sponsor-btn">
-            
-                
-                    
-                        <div class="sponsor-btn-1 border-r">Wechat</div>
-                    
-                
-                
-            
-                
-                    
-                        <div class="sponsor-btn-2 border-l">Alipay</div>
-                    
-                
-                
-            
-        </div>
-        
-        <div class="sponsor-img">
-            
-                
-                    <img class="sponsor-img-1" src="/images/sponsor/wechat.jpg" alt="">
-                
-                
-            
-                
-                    <img class="sponsor-img-2" src="/images/sponsor/alipay.jpg" alt="" style="display: none;">
-                
-                
-            
-        </div>
-        <div class="cancel efct-button">cancel</div>
     </div>
 </div>
 
