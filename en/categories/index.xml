@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 学点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2023 23:15:19 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 22:56:41 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>杂货</title>
+      <link>http://gzpeng233.github.io/en/categories/%E6%9D%82%E8%B4%A7/</link>
+      <pubDate>Tue, 14 Feb 2023 22:56:41 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/en/categories/%E6%9D%82%E8%B4%A7/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>电赛</title>
       <link>http://gzpeng233.github.io/en/categories/%E7%94%B5%E8%B5%9B/</link>
@@ -31,15 +40,6 @@
       <pubDate>Tue, 24 Jan 2023 15:09:00 +0800</pubDate>
       
       <guid>http://gzpeng233.github.io/en/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>杂货</title>
-      <link>http://gzpeng233.github.io/en/categories/%E6%9D%82%E8%B4%A7/</link>
-      <pubDate>Fri, 13 Jan 2023 23:13:00 +0800</pubDate>
-      
-      <guid>http://gzpeng233.github.io/en/categories/%E6%9D%82%E8%B4%A7/</guid>
       <description></description>
     </item>
     
