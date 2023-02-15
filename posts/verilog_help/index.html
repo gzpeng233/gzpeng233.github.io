@@ -3,19 +3,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>学点 | Series</title>
-    <meta name="description" content=" ">
-    <link rel="canonical" href="http://gzpeng233.github.io/series/" />
+    <title>学点 | 【杂货】Verilog 常用模块</title>
+    <meta name="description" content="Verilog 常用模块整理，如分频、按键消抖、数码管显示、点阵显示 ">
+    <link rel="canonical" href="http://gzpeng233.github.io/posts/verilog_help/" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <meta property="og:title" content="Series" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://gzpeng233.github.io/series/" />
+    <meta property="og:title" content="【杂货】Verilog 常用模块" />
+<meta property="og:description" content="Verilog 常用模块整理，如分频、按键消抖、数码管显示、点阵显示" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gzpeng233.github.io/posts/verilog_help/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-15T21:50:32+08:00" />
+<meta property="article:modified_time" content="2023-02-15T21:50:32+08:00" />
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Series"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="【杂货】Verilog 常用模块"/>
+<meta name="twitter:description" content="Verilog 常用模块整理，如分频、按键消抖、数码管显示、点阵显示"/>
 
     
         
@@ -209,27 +211,41 @@
 
 
         <div id="content">
-    
 
 
 
 
-
-
-    
-        
-        
-        
-    
 
 
 
 
     <div class="hero">
         
+            <div class="hero-img">
+                <img class="lazyload" src="/images/thumbnail.gif" data-src="/images/posts/verilog_help/verilog_help.jpg" alt="">
+            </div>
+        
         <div class="hero-content">
-            <div class="hero-title">系列</div>
-            <div></div>
+            <div class="hero-title">【杂货】Verilog 常用模块</div>
+            <div class="hero-subtitle"></div>
+            <div class="hero-date">
+                    <span class="no-wrap"><i class="fa fa-calendar"></i> 发布于: 2023-2-15 &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-calendar-check-o"></i> 更新于: 2023-2-15 &nbsp;</span>
+                    <span class="no-wrap"><i class="fa fa-folder"></i>
+                        收录于:
+                        
+                            <a href='
+                                /categories/%E6%9D%82%E8%B4%A7
+                            '>
+                                杂货
+                            </a>
+                    </span>    
+            </div>
+            <div class="timelong">
+                <span class="no-wrap"><i class="fa fa-pencil"></i> 文章字数: 1326 &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-clock-o"></i> 阅读时间: 7 分钟 &nbsp;</span>
+                <span class="no-wrap"><i class="fa fa-eye"></i> 阅读量: <span id="busuanzi_value_page_pv"></span></span>
+            </div>
         </div>
     </div>
 
@@ -248,7 +264,7 @@
     
 
 
-<div class="taxo-body">
+<div class="content-root">
     <div class="long">
         <button class="tosides-1 text-wbd">
             <i class="fa fa-arrow-right"></i>
@@ -261,15 +277,913 @@
         </button>
     </div>
     
-        <div class='taxo-row '>
+        <div class="content">
+            <div class="content-self">
+                <p>Verilog 常用模块整理，如分频、按键消抖、数码管显示、点阵显示 (以下代码缩进设置为 2 观看最佳)</p>
+<h1 id="相关资料">相关资料</h1>
+<p>可以去小脚丫官网查询想要信息，链接 <a href="https://www.stepfpga.com/doc/">小脚丫STEP开源社区</a></p>
+<h2 id="相关模块">相关模块</h2>
+<ol>
+<li>时钟分频</li>
+</ol>
+<p>带复位的时钟分频：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 模块名: divide
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 描述: 带复位的时钟分频
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输入: 分频时钟
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输入: 复位信号
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输出: 分频后的输出时钟
+</span></span></span><span class="line"><span class="cl"><span class="cm">**/</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">divide</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="n">clk</span><span class="p">,</span>			<span class="c1">// 连接到FPGA的C1脚，频率为12MHz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">input</span> <span class="n">rst_n</span><span class="p">,</span>		<span class="c1">// 复位信号(低电平有效)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">output</span> <span class="n">clkout</span>		<span class="c1">// 分频后的时钟信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span>	<span class="n">WIDTH</span>	<span class="o">=</span> <span class="mh">3</span><span class="p">;</span>	<span class="c1">//计数器的位数，计数的最大值为 2**WIDTH-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">parameter</span>	<span class="n">N</span>	<span class="o">=</span> <span class="mh">5</span><span class="p">;</span>			<span class="c1">//分频系数，请确保 N &lt; 2**WIDTH-1，否则计数会溢出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="n">WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span>	<span class="n">cnt_p</span><span class="p">,</span><span class="n">cnt_n</span><span class="p">;</span>		<span class="c1">//cnt_p为上升沿触发时的计数器，cnt_n为下降沿触发时的计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span>	<span class="n">clk_p</span><span class="p">,</span><span class="n">clk_n</span><span class="p">;</span>								<span class="c1">//clk_p为上升沿触发时分频时钟，clk_n为下降沿触发时分频时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 上升沿触发的模N计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span> <span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_p</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cnt_p</span><span class="o">==</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_p</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cnt_p</span><span class="o">&lt;=</span><span class="n">cnt_p</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//上升沿触发的分频时钟输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_p</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cnt_p</span><span class="o">&lt;</span><span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_p</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_p</span><span class="o">&lt;=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 下降沿触发的模N计数器      	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">negedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_n</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cnt_n</span><span class="o">==</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_n</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cnt_n</span><span class="o">&lt;=</span><span class="n">cnt_n</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 下降沿触发的分频时钟输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">negedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_n</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cnt_n</span><span class="o">&lt;</span><span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_n</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> 
+</span></span><span class="line"><span class="cl">		<span class="n">clk_n</span><span class="o">&lt;=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 经过运算，输出占空比为50%的时钟信号 */</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* 输出 = N是否为1 ? 不分频: (N是否时奇数 ? 特殊处理 : 直接输出其中一个信号即可) */</span>
+</span></span><span class="line"><span class="cl"><span class="k">assign</span> <span class="n">clkout</span> <span class="o">=</span> <span class="p">(</span><span class="n">N</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span> <span class="o">?</span> <span class="n">clk</span> <span class="o">:</span> <span class="p">(</span> <span class="n">N</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="o">?</span><span class="p">(</span><span class="n">clk_p</span><span class="o">&amp;</span><span class="n">clk_n</span><span class="p">)</span><span class="o">:</span><span class="n">clk_p</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不带复位的时钟分频：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 模块名: divide
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 描述: 不带复位的时钟分频
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输入: 分频时钟
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输出: 分频后的输出时钟
+</span></span></span><span class="line"><span class="cl"><span class="cm">**/</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">divide</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="n">clk</span><span class="p">,</span>			<span class="c1">// 连接到FPGA的C1脚，频率为12MHz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">output</span> <span class="n">clkout</span>		<span class="c1">// 分频后的时钟信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span>	<span class="n">WIDTH</span>	<span class="o">=</span> <span class="mh">3</span><span class="p">;</span>	<span class="c1">//计数器的位数，计数的最大值为 2**WIDTH-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">parameter</span>	<span class="n">N</span>	<span class="o">=</span> <span class="mh">5</span><span class="p">;</span>			<span class="c1">//分频系数，请确保 N &lt; 2**WIDTH-1，否则计数会溢出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="n">WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span>	<span class="n">cnt_p</span><span class="p">,</span><span class="n">cnt_n</span><span class="p">;</span>		<span class="c1">//cnt_p为上升沿触发时的计数器，cnt_n为下降沿触发时的计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span>	<span class="n">clk_p</span><span class="p">,</span><span class="n">clk_n</span><span class="p">;</span>								<span class="c1">//clk_p为上升沿触发时分频时钟，clk_n为下降沿触发时分频时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 上升沿触发的模N计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">cnt_p</span><span class="o">==</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_p</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cnt_p</span><span class="o">&lt;=</span><span class="n">cnt_p</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//上升沿触发的分频时钟输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">cnt_p</span><span class="o">&lt;</span><span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_p</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_p</span><span class="o">&lt;=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 下降沿触发的模N计数器      	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">negedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">cnt_n</span><span class="o">==</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_n</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cnt_n</span><span class="o">&lt;=</span><span class="n">cnt_n</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 下降沿触发的分频时钟输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">negedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">cnt_n</span><span class="o">&lt;</span><span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">clk_n</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> 
+</span></span><span class="line"><span class="cl">		<span class="n">clk_n</span><span class="o">&lt;=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 经过运算，输出占空比为50%的时钟信号 */</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* 输出 = N是否为1 ? 不分频: (N是否时奇数 ? 特殊处理 : 直接输出其中一个信号即可) */</span>
+</span></span><span class="line"><span class="cl"><span class="k">assign</span> <span class="n">clkout</span> <span class="o">=</span> <span class="p">(</span><span class="n">N</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span> <span class="o">?</span> <span class="n">clk</span> <span class="o">:</span> <span class="p">(</span> <span class="n">N</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="o">?</span><span class="p">(</span><span class="n">clk_p</span><span class="o">&amp;</span><span class="n">clk_n</span><span class="p">)</span><span class="o">:</span><span class="n">clk_p</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>按键消抖</li>
+</ol>
+<p>对一个按键进行消抖(最基础)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 模块名: debounce
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 描述: 消抖模块
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输入: 1kHz时钟信号
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输入: 未消抖信号
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输出: 消抖信号
+</span></span></span><span class="line"><span class="cl"><span class="cm">**/</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">debounce</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="n">clk_1kHz</span><span class="p">,</span>			<span class="c1">// 时钟信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">input</span> <span class="n">key</span><span class="p">,</span>					<span class="c1">// 输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">output</span> <span class="kt">reg</span> <span class="n">key_out</span>	<span class="c1">// 防抖后输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="n">cnt</span><span class="p">;</span>		<span class="c1">// 计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk_1kHz</span><span class="p">)</span><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">key</span><span class="p">)</span>	<span class="c1">// 未按下按键,清除计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">cnt</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="o">==</span><span class="mh">4</span><span class="mi">&#39;d10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt</span><span class="o">&lt;=</span><span class="mh">4</span><span class="mi">&#39;d10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt</span><span class="o">&lt;=</span><span class="n">cnt</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="o">==</span><span class="mh">4</span><span class="mi">&#39;d9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_out</span><span class="o">&lt;=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_out</span><span class="o">&lt;=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>暂未确认正确：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">debounce</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="n">clk</span><span class="p">,</span>	<span class="c1">// 输入时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">input</span> <span class="n">rst</span><span class="p">,</span>	<span class="c1">// 复位按键(低电平有效)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">input</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key</span><span class="p">,</span>				<span class="c1">// 需要消抖的按键
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">output</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key_pulse</span>	<span class="c1">// 消抖后的输出信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span> <span class="n">N</span>  <span class="o">=</span>  <span class="mh">1</span><span class="p">;</span>		<span class="c1">//要消除的按键的数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key_rst_pre</span><span class="p">;</span>	<span class="c1">// 存储上一个触发时的按键值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key_rst</span><span class="p">;</span>			<span class="c1">// 存储当前时刻触发的按键值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key_edge</span><span class="p">;</span>		<span class="c1">// 检测到按键由高到低变化是产生一个高脉冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span>  <span class="k">or</span>  <span class="k">negedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_rst</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="n">N</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_rst_pre</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="n">N</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_rst</span> <span class="o">&lt;=</span> <span class="n">key</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_rst_pre</span> <span class="o">&lt;=</span> <span class="n">key_rst</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>    
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assign</span>  <span class="n">key_edge</span> <span class="o">=</span> <span class="n">key_rst_pre</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">key_rst</span><span class="p">);</span> <span class="c1">// 脉冲边沿检测。当key检测到下降沿时，key_edge产生一个时钟周期的高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span>	<span class="p">[</span><span class="mh">17</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt</span><span class="p">;</span>			<span class="c1">// 产生延时所用的计数器，系统时钟12MHz，需要延时20ms，计数器至少18位     
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 产生20ms延时，当检测到 key_edge 有效时计数器清零开始计数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt</span> <span class="o">&lt;=</span> <span class="mh">18&#39;h0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">key_edge</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt</span> <span class="o">&lt;=</span> <span class="mh">18&#39;h0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mh">1&#39;h1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key_sec_pre</span><span class="p">;</span>		<span class="c1">// 延时后检测电平寄存器变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span> <span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">key_sec</span><span class="p">;</span>                    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 延时后检测key
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span>  <span class="k">or</span>  <span class="k">negedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_sec</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="n">N</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cnt</span><span class="o">==</span><span class="mh">18&#39;h3ffff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_sec</span> <span class="o">&lt;=</span> <span class="n">key</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span>  <span class="k">or</span>  <span class="k">negedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">key_sec_pre</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="n">N</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>                   
+</span></span><span class="line"><span class="cl">		<span class="n">key_sec_pre</span> <span class="o">&lt;=</span> <span class="n">key_sec</span><span class="p">;</span>             
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assign</span>  <span class="n">key_pulse</span> <span class="o">=</span> <span class="n">key_sec_pre</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">key_sec</span><span class="p">);</span>     
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>计数器</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 模8计数器,频率: 1KHz 计数周期: 8
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt_8</span><span class="p">;</span>		<span class="c1">// 3位计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">initial</span> <span class="n">cnt_8</span> <span class="o">&lt;=</span> <span class="mh">3</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk_1kHz</span><span class="p">)</span><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">cnt_8</span><span class="o">==</span><span class="mh">3</span><span class="mi">&#39;d7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_8</span><span class="o">&lt;=</span><span class="mh">3</span><span class="mi">&#39;d0</span><span class="p">;</span>		<span class="c1">// 重置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_8</span><span class="o">&lt;=</span><span class="n">cnt_8</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>	<span class="c1">// 向上计数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>数码管显示</li>
+</ol>
+<p>非扫描型 (共阴极)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/** 
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 模块名: Display
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 描述: 数码管显示模块
+</span></span></span><span class="line"><span class="cl"><span class="cm">**/</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">Display</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="n">number</span><span class="p">,</span>         <span class="c1">// 输入数字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">8</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">seg</span><span class="p">,</span> <span class="c1">// 数码管信号(共阴极数码管)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">initial</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">  <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h00</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="n">number</span><span class="p">)</span><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="mh">0</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h3f</span><span class="p">;</span>        <span class="c1">// 表示0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">1</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h06</span><span class="p">;</span>        <span class="c1">// 表示1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">2</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h5b</span><span class="p">;</span>        <span class="c1">// 表示2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">3</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h4f</span><span class="p">;</span>        <span class="c1">// 表示3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">4</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h66</span><span class="p">;</span>        <span class="c1">// 表示4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">5</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h6d</span><span class="p">;</span>        <span class="c1">// 表示5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">6</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h7d</span><span class="p">;</span>        <span class="c1">// 表示6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">7</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h07</span><span class="p">;</span>        <span class="c1">// 表示7
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="mh">8</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h7f</span><span class="p">;</span>        <span class="c1">// 表示8
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">default</span><span class="o">:</span> <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">9&#39;h6f</span><span class="p">;</span>  <span class="c1">// 表示9
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">endcase</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>扫描型 (共阴极)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/** 
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 模块名: Display
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 描述: 数码管显示模块
+</span></span></span><span class="line"><span class="cl"><span class="cm">**/</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">Display</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="n">clk_1kHz</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">tens</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">ones</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="err">……</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">xxxx</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">seg</span><span class="p">,</span> <span class="c1">// 数码管阳极信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cat</span> <span class="c1">// 数码管阴极信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">initial</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">  <span class="n">seg</span> <span class="o">&lt;=</span> <span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">cat</span> <span class="o">&lt;=</span> <span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="n">cnt_8</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="p">(</span><span class="n">cnt_8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 个位 */</span>
+</span></span><span class="line"><span class="cl">    <span class="mh">0</span><span class="o">:</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">      <span class="n">cat</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">case</span> <span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">0</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0011</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">1</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">2</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0101</span><span class="n">_1011</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">3</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0100</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">4</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_0110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">5</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">6</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">7</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">8</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">endcase</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 十位 */</span>
+</span></span><span class="line"><span class="cl">    <span class="mh">1</span><span class="o">:</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">      <span class="n">cat</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">case</span> <span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">0</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0011</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">1</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">2</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0101</span><span class="n">_1011</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">3</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0100</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">4</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_0110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">5</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">6</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">7</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">8</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">endcase</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="err">……</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">      <span class="n">cat</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">case</span> <span class="p">(</span><span class="n">xxxx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">0</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0011</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">1</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">2</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0101</span><span class="n">_1011</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">3</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0100</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">4</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_0110</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">5</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">6</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1101</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">7</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">8</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span> <span class="n">seg</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0110</span><span class="n">_1111</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">endcase</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">endcase</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 模8计数器,频率: 1KHz 计数周期: 8
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt_8</span><span class="p">;</span>		<span class="c1">// 3位计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">initial</span> <span class="n">cnt_8</span> <span class="o">&lt;=</span> <span class="mh">3</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk_1kHz</span><span class="p">)</span><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">cnt_8</span><span class="o">==</span><span class="mh">3</span><span class="mi">&#39;d7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_8</span><span class="o">&lt;=</span><span class="mh">3</span><span class="mi">&#39;d0</span><span class="p">;</span>		<span class="c1">// 重置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_8</span><span class="o">&lt;=</span><span class="n">cnt_8</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>	<span class="c1">// 向上计数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>点阵显示</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="n">close</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/** 
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 模块名: Lattice_Display
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 描述: 点阵显示模块
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输入: 1kHz时钟
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 输出: 行信号, 红列信号, 绿列信号
+</span></span></span><span class="line"><span class="cl"><span class="cm">**/</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">Lattice_Display</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="n">clk_1kHz</span><span class="p">,</span>		<span class="c1">// 1KHz时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">row</span><span class="p">,</span>				<span class="c1">// 行信号(低电平有效)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">col_r</span><span class="p">,</span>			<span class="c1">// 红色列信号(高电平有效)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">col_g</span>			<span class="c1">// 绿色列信号(高电平有效)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="n">cnt_8</span><span class="p">)</span><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span><span class="p">(</span><span class="n">cnt_8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="mh">3</span><span class="mi">&#39;d7</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b0111</span><span class="n">_1111</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 7 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d6</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1011</span><span class="n">_1111</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 6 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d5</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1101</span><span class="n">_1111</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 5 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d4</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1110</span><span class="n">_1111</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 4 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d3</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_0111</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 3 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d2</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1011</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0000</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 2 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d1</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1101</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 1 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="mh">3</span><span class="mi">&#39;d0</span><span class="o">:</span><span class="k">begin</span> <span class="n">row</span><span class="o">=</span><span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1110</span><span class="p">;</span><span class="n">col_r</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="n">col_g</span><span class="o">&lt;=</span><span class="mh">8</span><span class="mb">&#39;b0000</span><span class="n">_0011</span><span class="p">;</span><span class="k">end</span>		<span class="c1">// 第 0 行显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">endcase</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 模8计数器,频率: 1KHz 计数周期: 8
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt_8</span><span class="p">;</span>		<span class="c1">// 3位计数器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">initial</span> <span class="n">cnt_8</span> <span class="o">&lt;=</span> <span class="mh">3</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk_1kHz</span><span class="p">)</span><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">cnt_8</span><span class="o">==</span><span class="mh">3</span><span class="mi">&#39;d7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_8</span><span class="o">&lt;=</span><span class="mh">3</span><span class="mi">&#39;d0</span><span class="p">;</span>		<span class="c1">// 重置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt_8</span><span class="o">&lt;=</span><span class="n">cnt_8</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>	<span class="c1">// 向上计数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+            </div>
             
-                
+                <div class="tags">
+                    
+                    <span class="down-type-item">
+                        <div class="type-text">
+                            <a href='
+                                        /tags/%E6%9D%82%E8%B4%A7
+                                    '>
+                                <i class="fa fa-tag"></i> 杂货
+                            </a>
+                        </div>
+                    </span>
+                    
+                </div>
+            
+        </div>
+        
+            
+                <div class="pre-next">
+                    
+    
+        
+        <a href="http://gzpeng233.github.io/posts/package_management/" class="pre pre-last" style="text-align: center;">
+            <span class="pre-icon"><i class="fa fa-hand-o-left"></i></span>
+            <div class="pre-title-root">
+                <span>【杂货】包管理工具</span>
+            </div>
+        </a>
+        
+    
+    
 
+                </div>
+            
+        
+    
+</div>
 
+    
+        <div class="content-last">
+            
+                <button class="aixin content-last-item efct-button">
+                    <i class="fa fa-heart"></i>
+                </button>
+            
+            
+                <button class="pinglun content-last-item efct-button">
+                    <i class="fa fa-comment"></i>
+                </button>
             
         </div>
     
-</div>
 
 
             </div>
@@ -277,6 +1191,11 @@
                 
 <div class="zhuti-r-0">
     <div class="zhuti-r-1">
+        
+            <div class="button-r">
+                <button class="button-mulu efct-button" type="button"><span><i class="fa fa-bars"></i></span><span class="bars-text"> 目录</span></button>
+                <button class="button-comment efct-button" type="button"><span><i class="fa fa-comment"></i></span><span class="comment-text"> 评论</span></button>
+            </div>
         
         <div id="r1">
             
@@ -346,33 +1265,16 @@
 
 
 
+    
+    
+
 
 <div class="other">
     <div class="other-up">
-        <div class="other-qita text-wbd">最新文章</div>
+        <div class="other-qita text-wbd">相关文章</div>
         <div class="xian"></div>
     </div>
     <div class="list">
-        
-            <a href="http://gzpeng233.github.io/posts/verilog_help/">
-                
-<a href="http://gzpeng233.github.io/posts/verilog_help/">
-    <div class="list-item">
-        <div class="icon-other-root">
-            
-                <div class="icon-other" style="background-image: url( /images/posts/verilog_help/verilog_help.jpg );"></div>
-            
-        </div>
-        <div class="list-right">
-            <div class="other-title">
-                【杂货】Verilog 常用模块
-            </div>
-            <div class="other-summary"><p>Verilog 常用模块整理，如分频、按键消抖、数码管显示、点阵显示 (以下代码缩进设置为 2 观看最佳)</p></div>
-            <div class="other-date">2023-2-15</div>
-        </div>
-    </div>
-</a>
-            </a>
         
             <a href="http://gzpeng233.github.io/posts/package_management/">
                 
@@ -389,6 +1291,66 @@
             </div>
             <div class="other-summary"><p>包管理工具，如 npm, yarn</p></div>
             <div class="other-date">2023-2-14</div>
+        </div>
+    </div>
+</a>
+            </a>
+        
+            <a href="http://gzpeng233.github.io/posts/science_surf_github/">
+                
+<a href="http://gzpeng233.github.io/posts/science_surf_github/">
+    <div class="list-item">
+        <div class="icon-other-root">
+            
+                <div class="icon-other" style="background-image: url( /images/posts/science_surf_github/science_surf_github.jpg );"></div>
+            
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                【杂货】如何科学连接GitHub
+            </div>
+            <div class="other-summary"><p>开发最常见的问题就是Github连接较慢，如何才能连接Github不掉网，这里记录我使用的几种方式</p></div>
+            <div class="other-date">2023-1-13</div>
+        </div>
+    </div>
+</a>
+            </a>
+        
+            <a href="http://gzpeng233.github.io/posts/trouble_solve/">
+                
+<a href="http://gzpeng233.github.io/posts/trouble_solve/">
+    <div class="list-item">
+        <div class="icon-other-root">
+            
+                <div class="icon-other" style="background-image: url( /images/posts/trouble_solve/trouble_solve.jpg );"></div>
+            
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                【杂货】一些开发常见问题
+            </div>
+            <div class="other-summary"><p>记录一些开发常见的问题</p></div>
+            <div class="other-date">2023-1-10</div>
+        </div>
+    </div>
+</a>
+            </a>
+        
+            <a href="http://gzpeng233.github.io/posts/collection/">
+                
+<a href="http://gzpeng233.github.io/posts/collection/">
+    <div class="list-item">
+        <div class="icon-other-root">
+            
+                <div class="icon-other" style="background-image: url( /images/posts/collection/collection.jpg );"></div>
+            
+        </div>
+        <div class="list-right">
+            <div class="other-title">
+                【杂货】一些杂货
+            </div>
+            <div class="other-summary"><p>下面是一些杂货，可能会用得到，不定时更新</p></div>
+            <div class="other-date">2022-12-15</div>
         </div>
     </div>
 </a>
@@ -414,57 +1376,71 @@
 </a>
             </a>
         
-            <a href="http://gzpeng233.github.io/posts/openmv_code/">
-                
-<a href="http://gzpeng233.github.io/posts/openmv_code/">
-    <div class="list-item">
-        <div class="icon-other-root">
-            
-                <div class="icon-other" style="background-image: url( /images/posts/openmv_code/openmv_code.jpg );"></div>
-            
-        </div>
-        <div class="list-right">
-            <div class="other-title">
-                【电赛】openmv 编程指南
-            </div>
-            <div class="other-summary"><p>openmv开发指南</p></div>
-            <div class="other-date">2023-2-9</div>
-        </div>
-    </div>
-</a>
-            </a>
-        
-            <a href="http://gzpeng233.github.io/posts/wxminiprogram_common_problem/">
-                
-<a href="http://gzpeng233.github.io/posts/wxminiprogram_common_problem/">
-    <div class="list-item">
-        <div class="icon-other-root">
-            
-                <div class="icon-other" style="background-image: url( /images/posts/wxminiprogram_common_problem/wxminiprogram_common_problem.jpg );"></div>
-            
-        </div>
-        <div class="list-right">
-            <div class="other-title">
-                【微信小程序】常见问题
-            </div>
-            <div class="other-summary"><p>微信小程序开发过程中有许多常见问题，虽难度较小，但解决方式不易找出，故列举如下</p></div>
-            <div class="other-date">2023-2-4</div>
-        </div>
-    </div>
-</a>
-            </a>
-        
     </div>
 </div>
         </div>
         <div id="r2">
-            
+            <div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: "CAVZmuQTjsDAwzKcaoEpIlrs-gzGzoHsz",
+        appKey: "U0q8xkp4hS74nTNbUFduT3SE",
+        avatar: "robohash",
+        placeholder: "输入你的评论",
+        requiredFields: ["nick"],
+        visitor:  true ,
+        pageSize:  5 ,
+});
+</script>
+
         </div> 
     </div>
 </div>
 
             </div>
         </div>
+    </div>
+</div>
+
+    
+
+<div class="sponsor">
+    <div class="sponsor-self">
+        <div class="sponsor-title">赞赏</div>
+        <div class="sponsor-btn">
+            
+                
+                    
+                        <div class="sponsor-btn-1 border-r">微信</div>
+                    
+                
+                
+            
+                
+                    
+                        <div class="sponsor-btn-2 border-l">支付宝</div>
+                    
+                
+                
+            
+        </div>
+        
+        <div class="sponsor-img">
+            
+                
+                    <img class="sponsor-img-1" src="/images/sponsor/wechat.jpg" alt="">
+                
+                
+            
+                
+                    <img class="sponsor-img-2" src="/images/sponsor/alipay.jpg" alt="" style="display: none;">
+                
+                
+            
+        </div>
+        <div class="cancel efct-button">取消</div>
     </div>
 </div>
 

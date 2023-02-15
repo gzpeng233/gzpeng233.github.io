@@ -6,7 +6,16 @@
     <description>Recent content in 杂货 on 学点</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 22:56:41 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/categories/%E6%9D%82%E8%B4%A7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Feb 2023 21:50:32 +0800</lastBuildDate><atom:link href="http://gzpeng233.github.io/categories/%E6%9D%82%E8%B4%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【杂货】Verilog 常用模块</title>
+      <link>http://gzpeng233.github.io/posts/verilog_help/</link>
+      <pubDate>Wed, 15 Feb 2023 21:50:32 +0800</pubDate>
+      
+      <guid>http://gzpeng233.github.io/posts/verilog_help/</guid>
+      <description>&lt;p&gt;Verilog 常用模块整理，如分频、按键消抖、数码管显示、点阵显示 (以下代码缩进设置为 2 观看最佳)&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>【杂货】包管理工具</title>
       <link>http://gzpeng233.github.io/posts/package_management/</link>
